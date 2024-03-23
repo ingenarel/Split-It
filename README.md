@@ -6,8 +6,6 @@ Just download the release file. I created an sfx archive so you don't need to co
 
 Download the exe and move it to in the same directory as your simulation cache is. run the exe. it's pretty straighforward.
 
-run split_it.bat
-
 enjoy!
 
 This is actually my first actual program that does anything so it's not that good.

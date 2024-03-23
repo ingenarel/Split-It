@@ -2,7 +2,9 @@ introducing split it!
 
 an auto cache splitter for sheepit!
 
-just download the files and copy them in the same directory that your simulation folder is.
+Just download the release file. I created an sfx archive so you don't need to copy paste 17 bat files in your simulation cache direcotry for it to work lol.
+
+Download the exe and move it to in the same directory as your simulation cache is. run the exe. it's pretty straighforward.
 
 run split_it.bat
 

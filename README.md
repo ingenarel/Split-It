@@ -1,4 +1,13 @@
 ```
+IF YOU DOWNLOAD THE EXE WINDOWS DEFENDER WILL TAG IT AS A VIRUS! HOWEVER AS YOU CAN SEE IT'S NOT. I USED WINRAR TO MERGE ALL THESE TO A SINGLE EXE THAT'S WHY IT'S DOING THIS!
+I'LL FIX IT IN THE FUTURE BUT FOR NOW EITHER DOWNLOAD THE EXE, AND IF YOU CAN'T OR WON'T, THEN JUST DOWNLOAD THE SOURCE CODE AND MAKE THE SFX FILE YOURSELF!!!
+If you want to make the sfx file yourself, I've explained it at the bottom
+If you decide to download and don't wanna get into a hassle, download the file,
+extract it. Then drag and drag and drop the exe where your simulation cache folder is, and then
+run and install it in the current directory. it will autorun the files that are necessary... 
+And if windows defender blocks it, select it in the defender menu and allow threats.
+```
+```
  ________       ________    ___           ___      _________                ___      _________    ___
 |\   ____\     |\   __  \  |\  \         |\  \    |\___   ___\             |\  \    |\___   ___\ |\  \
 \ \  \___|_    \ \  \|\  \ \ \  \        \ \  \   \|___ \  \_|             \ \  \   \|___ \  \_| \ \  \
@@ -90,3 +99,28 @@ ________________________________________________________________________________
 |:____________________________________________________________________________________________________________________________________________:|
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ```
+
+# How to create the sfx file yourself:
+## Step 1: Download the source code
+### 1. Go to releases
+![image](https://github.com/ingenarel/Split-It/assets/145784829/8eea42f5-b9be-4f7c-a729-702a66b111b0)
+### 2. Go to downloads
+![image](https://github.com/ingenarel/Split-It/assets/145784829/d1b468ad-db29-44d0-9553-53895566ad27)
+### 3. Then either download the zip file or tar.gz file
+![image](https://github.com/ingenarel/Split-It/assets/145784829/a4675ce7-1b11-443e-8e20-abfddb6cfe86)
+
+### Step 2: Make the sfx file (self extracting exe file) with winrar:
+I know that you can use 7-zip to do this. But I find it complex so i'm just gonna use winrar.
+### 1. Extract the source code.
+### 2. Select all the files, left click, and create an archive with winrar.
+![image](https://github.com/ingenarel/Split-It/assets/145784829/04b90897-873c-44b6-9887-85cc86b7719a)
+### 3. Choose any type of archive method and check the "Create sfx archive box"
+![image](https://github.com/ingenarel/Split-It/assets/145784829/68b5bd26-1c33-4000-8da0-469995e175da)
+### 4. Go to the advanced tab and click the sfx options
+![image](https://github.com/ingenarel/Split-It/assets/145784829/259bc31b-f3bb-4c58-aaf0-b9b05d6878f0)
+### 5. Go to the setup tab an in the run after extraction menu, copy and paste this: "Split_It.bat" (Don't use qoutation marks)
+![image](https://github.com/ingenarel/Split-It/assets/145784829/fdf78ca3-ae61-4fe3-a619-593cf264b579)
+### 5. Then click ok. and click ok again.
+
+Now whenever you need to split your caches. drag and drop it where your simulation cache folder is, and then run and install it in the current directory. it will autorun the files that are necessary... 
+And if windows defender blocks it, select it and allow threats.

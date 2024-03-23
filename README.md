@@ -6,6 +6,6 @@ just download the files and copy them in the same directory that your simulation
 
 run split_it.bat
 
-enojoy!
+enjoy!
 
 This is actually my first actual program that does anything so it's not that good.

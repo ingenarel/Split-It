@@ -2,7 +2,8 @@
 IF YOU DOWNLOAD THE EXE WINDOWS DEFENDER WILL TAG IT AS A VIRUS! HOWEVER AS YOU CAN SEE IT'S NOT. I USED WINRAR TO MERGE ALL THESE TO A SINGLE EXE THAT'S WHY IT'S DOING THIS!
 I'LL FIX IT IN THE FUTURE BUT FOR NOW EITHER DOWNLOAD THE EXE, AND IF YOU CAN'T OR WON'T, THEN JUST DOWNLOAD THE SOURCE CODE AND MAKE THE SFX FILE YOURSELF!!!
 If you want to make the sfx file yourself, I've explained it at the bottom
-If you decide to download and don't wanna get into a hassle, download the file,
+
+If you do decide to download the exe and don't wanna get into a hassle, download the file,
 extract it. Then drag and drag and drop the exe where your simulation cache folder is, and then
 run and install it in the current directory. it will autorun the files that are necessary... 
 And if windows defender blocks it, select it in the defender menu and allow threats.

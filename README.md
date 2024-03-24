@@ -1,14 +1,4 @@
 ```
-IF YOU DOWNLOAD THE EXE WINDOWS DEFENDER WILL TAG IT AS A VIRUS! HOWEVER AS YOU CAN SEE IT'S NOT. I USED WINRAR TO MERGE ALL THESE TO A SINGLE EXE THAT'S WHY IT'S DOING THIS!
-I'LL FIX IT IN THE FUTURE BUT FOR NOW EITHER DOWNLOAD THE EXE, AND IF YOU CAN'T OR WON'T, THEN JUST DOWNLOAD THE SOURCE CODE AND MAKE THE SFX FILE YOURSELF!!!
-If you want to make the sfx file yourself, I've explained it at the bottom
-
-If you do decide to download the exe and don't wanna get into a hassle, download the file,
-extract it. Then drag and drag and drop the exe where your simulation cache folder is, and then
-run and install it in the current directory. it will autorun the files that are necessary... 
-And if windows defender blocks it, select it in the defender menu and allow threats.
-```
-```
  ________       ________    ___           ___      _________                ___      _________    ___
 |\   ____\     |\   __  \  |\  \         |\  \    |\___   ___\             |\  \    |\___   ___\ |\  \
 \ \  \___|_    \ \  \|\  \ \ \  \        \ \  \   \|___ \  \_|             \ \  \   \|___ \  \_| \ \  \
@@ -43,6 +33,22 @@ And if windows defender blocks it, select it in the defender menu and allow thre
  | |  |  \| | | |  _  |  _|   |  \| |   / _ \   | |_) | |  _|   | |
  | |  | |\  | | |_| | | |___  | |\  |  / ___ \  |  _ <  | |___  | |___
 |___| |_| \_|  \____| |_____| |_| \_| /_/   \_\ |_| \_\ |_____| |_____|
+```
+
+```
+Extract the zip, drag the exe in the same directory as your simulation folder. (NOT INSIDE THE SIMULATION FOLDER, BUT INSTEAD WHERE THE SIMULATION FOLDER IS!)
+Then run the exe.
+It will promt an installation folder.
+Don't change it. install in the current directory. otherwise it won't work.
+It's just a few bat files, a readme file and the license file. You can delete this later if you want to.
+The password is split.
+Why a password?
+Because windows defender was flagging it as a virus. trojan to be exact.
+However it's a false positive because I'm using a bat file to copy paste files.
+So i password protected the exe and then put it in a zip and password protected it again.
+PLEASE FOR GOD'S SAKE I DON'T RECCOMEND THIS IDEA FOR ANY OF YOUR PROJECTS AND IF SOMEONE USES THIS IDEA I CAN'T BE HELD ACCOUNTABLE! I'M JUST DESCRIBING WHAT I DID!
+If somehow that's still gets flagged by defender, just go to defender, select the exe and allow threats.
+If you don't trust the release tho, you can build it yourself. I showed that below.
 ```
 
 ```
@@ -123,5 +129,10 @@ I know that you can use 7-zip to do this. But I find it complex so i'm just gonn
 ![image](https://github.com/ingenarel/Split-It/assets/145784829/fdf78ca3-ae61-4fe3-a619-593cf264b579)
 ### 5. Then click ok. and click ok again.
 
-Now whenever you need to split your caches. drag and drop it where your simulation cache folder is, and then run and install it in the current directory. it will autorun the files that are necessary... 
-And if windows defender blocks it, select it and allow threats.
+Now whenever you need to split your caches. drag and drop it where your simulation cache folder is, 
+(NOT INSIDE THE SIMULATION FOLDER, BUT INSTEAD WHERE THE SIMULATION FOLDER IS!) and then run and install it in the current directory. 
+It will promt an installation folder.
+Don't change it. install in the current directory. otherwise it won't work.
+It's just a few bat files, a readme file and the license file. You can delete this later if you want to.
+It will autorun the files that are necessary...
+And if windows defender still blocks it, select it and allow threats.

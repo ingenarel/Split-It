@@ -30,8 +30,8 @@ title Split It! version 0.2 (beta testing)
             call success_msg.bat
             set /p "file_count=Enter the number of files to copy into each folder (use numerical values only or it won't work): "
             call config_splitter.bat
-            rem call data_splitter.bat
-            rem call mesh_splitter.bat
+            call data_splitter.bat
+            call mesh_splitter.bat
             call guiding_conf.bat
             call noise_conf.bat
             call particles_conf.bat

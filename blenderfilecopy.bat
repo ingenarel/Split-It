@@ -25,7 +25,6 @@ if defined fileExists (
         xcopy "%source_file%" "%%G\" >nul 2>nul
     )
     echo Blend file copy pasted successfully
-    pause
 ) else (
     call error_msg.bat
     goto ask_for_filename

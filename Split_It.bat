@@ -35,6 +35,7 @@ title Split It! version 0.2 (beta testing)
             call guiding_conf.bat
             call noise_conf.bat
             call particles_conf.bat
+            call blenderfilecopy.bat
             call end.bat
             exit /b
         

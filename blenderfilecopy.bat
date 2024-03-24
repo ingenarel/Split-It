@@ -18,12 +18,13 @@ for %%F in ("%cd%\*") do (
 
 :found
 if defined fileExists (
-    echo Please wait till I copy the blend files... ^>.^<
+    call success_msg.bat
+    echo Please wait till I copy and paste the blend file in the correct folders... ^>.^<
 
     for /D %%G in ("%destination_folder%\*") do (
-        xcopy "%source_file%" "%%G\"
+        xcopy "%source_file%" "%%G\" >nul 2>nul
     )
-    echo all blend files copied.
+    echo Blend file copy pasted successfully
     pause
 ) else (
     call error_msg.bat

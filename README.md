@@ -34,6 +34,8 @@
  | |  | |\  | | |_| | | |___  | |\  |  / ___ \  |  _ <  | |___  | |___
 |___| |_| \_|  \____| |_____| |_| \_| /_/   \_\ |_| \_\ |_____| |_____|
 ```
+# Click this youtube video to learn more an get an indepth guide on how to use it :
+Made this video for version 0.5 tho. I'll update it soon
 [![Youtube video](https://github.com/ingenarel/Split-It/assets/145784829/0f630b0e-b98a-4141-b9ef-5122db36998a)](https://www.youtube.com/watch?v=mYr9S6iyG7g)
 ```
 

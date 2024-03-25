@@ -34,8 +34,9 @@
  | |  | |\  | | |_| | | |___  | |\  |  / ___ \  |  _ <  | |___  | |___
 |___| |_| \_|  \____| |_____| |_| \_| /_/   \_\ |_| \_\ |_____| |_____|
 ```
-[![Youtube video](https://img.youtube.com/vi/mYr9S6iyG7g)](https://www.youtube.com/watch?v=mYr9S6iyG7g)
+[![Youtube video](https://github.com/ingenarel/Split-It/assets/145784829/0f630b0e-b98a-4141-b9ef-5122db36998a)](https://www.youtube.com/watch?v=mYr9S6iyG7g)
 ```
+
 Extract the zip, drag the exe in the same directory as your simulation folder. (NOT INSIDE THE SIMULATION FOLDER, BUT INSTEAD WHERE THE SIMULATION FOLDER IS!)
 Then run the exe.
 It will promt an installation folder.

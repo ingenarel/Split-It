@@ -58,4 +58,11 @@ echo ++++++++@*++****@#####****%%+%%@*+++**##**********#**++#*+**#*************%
 echo ++++++++@++*#**#%%####******%%*%%@*++++*%%#******##%%*+++*%%++**%%************##***##*+++++*@++++++++++++++
 echo ++++++++@++****#%%###*******##*%%@*++++*#+****++#*+++*@#++**%%************%%*#**###++++++##+++++++++++++
 echo ++++++++@++****#%%##**********###@#++++#*+++++##+++#@%%#++*##***********#%%*#***##%%++++++%%+++++++++++++
+echo.
+echo.
+echo Please check your zip files before you upload your project. Because
+echo I'm dumb
+echo and
+echo even if something works for someone it might not work for others.
+echo I hope you have a great life 
 pause

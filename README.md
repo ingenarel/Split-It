@@ -67,7 +67,6 @@ ________________________________________________________________________________
 |: I'll eventually learn them too and then i'll try to upgrade it!                                                                                                            :|
 |: I'll also try to make a smart cache splitter where it will split the files based on their sizes.                                                                           :|
 |: But for now you will have to set how many splits you want to make.                                                                                                         :|
-|: I'll also try to integrate 7-zip with this so it can automatically zip your project for you. but i'm dumb and it's too much for my brain so i'll do that in the future.    :|
 |: If you have any suggestions and you know how to do it, I'll appreciate the help!                                                                                           :|
 |: I'm just a member of the SheepIt community i'm not a dev so if i make any errors it's my fault not theirs!                                                                 :|
 |:                                                                                                                                                                            :|
@@ -136,3 +135,65 @@ Don't change it. install in the current directory. otherwise it won't work.
 It's just a few bat files, a readme file and the license file. You can delete this later if you want to.
 It will autorun the files that are necessary...
 And if windows defender still blocks it, select it and allow threats.
+
+
+# How it works:
+```
+at first it goes to your cache folder. then it takes the first x files from the config file.
+x is you, setting how much files it will take per folder. it could be 1/2/3 basically anything. only a number tho lol
+it pastes those files in a different folder. it will first create a folder called 
+Destination. it will store all the files and folders that are split. then it creates 
+a folder called '1' then create another folder inside it that's the same name as
+your simulation cache folder. and then create another folder called config inside it
+and then paste those files in the config folder.
+
+to show it visually it's doing this...
+
+Destination
+  ➡ 1
+    ➡simulation folder name
+      ➡config
+        ➡the first x amount of files
+
+the next step is doing the same thing for all those files. creates folders called 1, 2 , 3 etc basically an unique folder for each x amount of files
+
+so now it looks like this:
+
+Destination
+  ➡ 1
+    ➡simulation folder name
+      ➡config
+        ➡the first x amount of files
+  ➡ 2
+    ➡simulation folder name
+      ➡config
+        ➡the second x amount of files
+
+then it does the same thing for the data and mesh folder in your simulation directory.
+
+then it asks questions it would do with the guiding, noise, and particles folder. 
+either split them too if they have files in them (which i personally didn't have on my projects) or just create those folders
+that are named guiding, noise, and particles in the split cache directory so it works properly.
+
+then it copy pastes your blend file in each sub folder in the destination folder.
+
+that means....
+
+Destination
+  ➡ 1
+    ➡your blend file
+    ➡simulation folder name
+      ➡config
+        ➡the first x amount of files
+
+  ➡ 2
+    ➡your blend file
+    ➡simulation folder name
+      ➡config
+        ➡the second x amount of files
+
+etc etc
+
+then it creates a zip for the 1 folder. then the 2 folder. so on and so on
+the zip files are created in the Destination folder
+```

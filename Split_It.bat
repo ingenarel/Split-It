@@ -37,6 +37,7 @@ title Split It! version 0.2 (beta testing)
             call particles_conf.bat
             call blenderfilecopy.bat
             call zipper.bat
+            call folder_deleter.bat
             call end.bat
             exit /b
         

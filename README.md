@@ -34,7 +34,7 @@
  | |  | |\  | | |_| | | |___  | |\  |  / ___ \  |  _ <  | |___  | |___
 |___| |_| \_|  \____| |_____| |_| \_| /_/   \_\ |_| \_\ |_____| |_____|
 ```
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/mYr9S6iyG7g?si=1LDgzvRuMZ1JU6E7)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/mYr9S6iyG7g&t=47s/0.jpg)](https://youtu.be/mYr9S6iyG7g?si=1LDgzvRuMZ1JU6E7)
 ```
 Extract the zip, drag the exe in the same directory as your simulation folder. (NOT INSIDE THE SIMULATION FOLDER, BUT INSTEAD WHERE THE SIMULATION FOLDER IS!)
 Then run the exe.

@@ -70,7 +70,6 @@ echo ^|: This is because I only know how fluid cache files works and i haven't r
 echo ^|: I'll eventually learn them too and then i'll try to upgrade it!                                                                                                            :^|
 echo ^|: I'll also try to make a smart cache splitter where it will split the files based on their sizes.                                                                           :^|
 echo ^|: But for now you will have to set how many splits you want to make.                                                                                                         :^|
-echo ^|: I'll also try to integrate 7-zip with this so it can automatically zip your project for you. but i'm dumb and it's too much for my brain so i'll do that in the future.    :^|
 echo ^|: If you have any suggestions and you know how to do it, I'll appreciate the help!                                                                                           :^|
 echo ^|: I'm just a member of the SheepIt community i'm not a dev so if i make any errors it's my fault not theirs!                                                                 :^|
 echo ^|: I'll also try to post this on github and make it open source too altho i'm kinda a noob at that too. :(                                                                    :^|

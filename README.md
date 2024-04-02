@@ -42,21 +42,11 @@ https://github.com/ingenarel/Split-It/assets/145784829/29cb15e3-649b-4b97-b04a-9
 # Click this youtube video to learn more an get an in-depth guide on how to use it :
 Made this video for version 0.5 tho. I'll update it soon
 [![Youtube video](https://github.com/ingenarel/Split-It/assets/145784829/0f630b0e-b98a-4141-b9ef-5122db36998a)](https://www.youtube.com/watch?v=mYr9S6iyG7g)
-```
 
-Extract the zip, drag the exe in the same directory as your simulation folder. (NOT INSIDE THE SIMULATION FOLDER, BUT INSTEAD WHERE THE SIMULATION FOLDER IS!)
+```
+Extract the zip, drag the exe in the same directory as your simulation folder.
+NOT INSIDE THE SIMULATION FOLDER, BUT INSTEAD WHERE THE SIMULATION FOLDER IS!
 Then run the exe.
-It will promt an installation folder.
-Don't change it. install in the current directory. otherwise it won't work.
-It's just a few bat files, a readme file and the license file. You can delete this later if you want to.
-The password is split.
-Why a password?
-Because windows defender was flagging it as a virus. trojan to be exact.
-However it's a false positive because I'm using a bat file to copy paste files.
-So i password protected the exe and then put it in a zip and password protected it again.
-PLEASE FOR GOD'S SAKE I DON'T RECCOMEND THIS IDEA FOR ANY OF YOUR PROJECTS AND IF SOMEONE USES THIS IDEA I CAN'T BE HELD ACCOUNTABLE! I'M JUST DESCRIBING WHAT I DID!
-If somehow that's still gets flagged by defender, just go to defender, select the exe and allow threats.
-If you don't trust the release tho, you can build it yourself. I showed that below.
 ```
 
 ```
@@ -113,38 +103,6 @@ ________________________________________________________________________________
 |:____________________________________________________________________________________________________________________________________________:|
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ```
-
-# How to create the sfx file yourself:
-## Step 1: Download the source code
-### 1. Go to releases
-![image](https://github.com/ingenarel/Split-It/assets/145784829/8eea42f5-b9be-4f7c-a729-702a66b111b0)
-### 2. Go to downloads
-![image](https://github.com/ingenarel/Split-It/assets/145784829/d1b468ad-db29-44d0-9553-53895566ad27)
-### 3. Then either download the zip file or tar.gz file
-![image](https://github.com/ingenarel/Split-It/assets/145784829/a4675ce7-1b11-443e-8e20-abfddb6cfe86)
-
-### Step 2: Make the sfx file (self extracting exe file) with winrar:
-I know that you can use 7-zip to do this. But I find it complex so i'm just gonna use winrar.
-### 1. Extract the source code.
-### 2. Select all the files, left click, and create an archive with winrar.
-![image](https://github.com/ingenarel/Split-It/assets/145784829/04b90897-873c-44b6-9887-85cc86b7719a)
-### 3. Choose any type of archive method and check the "Create sfx archive box"
-![image](https://github.com/ingenarel/Split-It/assets/145784829/68b5bd26-1c33-4000-8da0-469995e175da)
-### 4. Go to the advanced tab and click the sfx options
-![image](https://github.com/ingenarel/Split-It/assets/145784829/259bc31b-f3bb-4c58-aaf0-b9b05d6878f0)
-### 5. Go to the setup tab an in the run after extraction menu, copy and paste this: "Split_It.bat" (Don't use qoutation marks)
-![image](https://github.com/ingenarel/Split-It/assets/145784829/fdf78ca3-ae61-4fe3-a619-593cf264b579)
-### 5. Then click ok. and click ok again.
-
-Now whenever you need to split your caches. drag and drop it where your simulation cache folder is, 
-(NOT INSIDE THE SIMULATION FOLDER, BUT INSTEAD WHERE THE SIMULATION FOLDER IS!) and then run and install it in the current directory. 
-It will promt an installation folder.
-Don't change it. install in the current directory. otherwise it won't work.
-It's just a few bat files, a readme file and the license file. You can delete this later if you want to.
-It will autorun the files that are necessary...
-And if windows defender still blocks it, select it and allow threats.
-
-
 # How it works:
 ```
 at first it goes to your cache folder. then it takes the first x files from the config file.
@@ -204,4 +162,8 @@ etc etc
 
 then it creates a zip for the 1 folder. then the 2 folder. so on and so on
 the zip files are created in the Destination folder
+
+and then you have the option to delete the splitted folders that was used to create your zips...
+you don't have to do it manually it ask you.
+
 ```

@@ -149,7 +149,9 @@ etc etc
 then it creates a zip for the 1 folder. then the 2 folder. so on and so on
 the zip files are created in the Destination folder
 
-and then you have the option to delete the splitted folders that was used to create your zips...
-you don't have to do it manually it ask you.
+Then it asks you if it shoudld delete the subfolders that were created while the spliiting happened.
+You can choose to delete them. If you wish to do so, it will delete those 1, 2, 3 folders.
+Deleting those folders won't matter because you'll still have the zips.
+This functions was created so that you don't waste extra space. 
 
 ```

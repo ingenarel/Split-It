@@ -213,6 +213,30 @@ and
 even if something works for someone it might not work for others.
 I hope you have a great life""")
 
+def license():
+    print("""
+THE FUCK PAYING! ATTRIBUTE AND DONATE LICENSE (TFPADL)
+
+Version 1.0
+
+By using this piece of software, you agree to the following terms:
+
+1. You are granted the right to use, modify, and redistribute this software under the following conditions:
+    i) Your modified or unmodified version, and/or your own project using this software, must be distributed free of charge.
+    ii) Proper attribution to the original authors must be provided.
+    iii) If you receive donations related to the distribution or use of this software, you must encourage people to also donate to the original authors by providing a link to their website, account, donation links, or project page.
+    iv) You must include the source code of your version, along with a link to the original version.
+
+2. Use of this software is at your own risk. The original authors will not be responsible for any damages or liabilities arising from the use, modification, or distribution of this software.
+
+3. The original authors reserve the right to change the terms of this license at any time without prior notice. You are obligated to comply with the updated terms.
+
+4. Non-compliance with the terms of this license will result in the immediate termination of your rights to use this software and may lead to legal action.
+
+Original Authors:
+Ingenarel
+""")
+
 #Variables for runtime
 class variables:
     #The title Variable
@@ -543,7 +567,9 @@ def main_func():
 You can type "Ver" or "Version" to check if an update is there.
 You can type "cls" or "clear screen" to clean the Terminal/Command Prompt.
 Type "s" or "start" to use the splitter.
-type "help" for a more thorough help site.""")
+Type license to see the license.
+You can use exit() or exit or close to exit. 
+              """)
         
         starting_choice=input("What do you want to do? ").lower()
         
@@ -556,6 +582,9 @@ type "help" for a more thorough help site.""")
         
         elif starting_choice=="exit()" or starting_choice=="exit" or starting_choice=="close":
             exit()
+        
+        elif starting_choice=="license":
+            license()
 
 if __name__=="__main__":
     start(title=variables.title)

@@ -245,7 +245,7 @@ Ingenarel
 #Variables for runtime
 class variables:
     #The title Variable
-    local_version="v0.7"
+    local_version="v0.9"
     title=f"Split It! version {local_version}"
     
     #URL Specific stuff

@@ -307,16 +307,14 @@ def processing_folders():
             #That while loop is for the file count to not end up at 0
             if variables.file_count==0:
                 while True:
-                    try:
-                        variables.file_count=int(input("Enter the number of files to copy in to each folder: "))
-                    except TypeError:
-                        print(f"Nuh uh! Numbers only!\n")
+
+                    variables.file_count=int(input("Enter the number of files to copy in to each folder: "))
                     
-                    if variables.file_count < 1:
-                        print("Nuh uh! There has to be at least 10 files. ")    #why? it should work if the file count is anything but 0
-                    
-                    elif variables.file_count > 9:
+                    if variables.file_count >= 1:
                         break
+                    else:
+                        print("Nuh uh! There has to be at least 1 file. ")
+                        continue
             
             #Getting the output directory and source folder.
             variables.output_dir=str(variables.folder_lookup.get(str(variables.current_folder)))

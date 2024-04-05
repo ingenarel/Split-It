@@ -362,7 +362,46 @@ def processing_folders():
     variables.folder_count=1
     variables.current_folder=1
     variables.output_dir=""
+    blend_copypaste()
+
+def blend_copypaste():
+    while True:
+        # Ask for source file name
+        source_file = input("Enter the name of the blend file that you want to copy (with extension): ")
+
+        if source_file.lower() in ["cls", "clear"]:  # Check for "cls" or "clear" inputs
+            os.system('cls' if os.name == 'nt' else 'clear')
+            continue  # Restart the loop without checking files
+
+        # List files in the current directory (case sensitive)
+        files_in_directory = os.listdir('.')
+
+        # Check if source file exists (case sensitive)
+        if source_file not in files_in_directory:
+            error_msg()
+        
+        else:
+            print("Please wait till I copy and paste the blend file in the correct folders... >.<")
+            break
+
+    # Destination folder name
+    destination_folder = "Destination"
+
+    # Check if destination folder exists, create if not
+    if not os.path.exists(destination_folder):
+        os.makedirs(destination_folder)
+
+    # Iterate over immediate subdirectories in the Destination folder
+    for directory in os.listdir(destination_folder):
+        # Construct destination path
+        destination_path = os.path.join(destination_folder, directory, os.path.basename(source_file))
+        # Copy the file to each subdirectory
+        shutil.copy2(source_file, destination_path)
+
+    print("Blend file copy pasted successfully.")
+
     zip_files()
+        
 
 #The zipper function (No humans have been harmed at the making.)
 def zip_files():

@@ -410,9 +410,9 @@ The zip files won't be deleted, just the folders and files that were created in 
             print("\nAll split cache folders deleted successfully.\nDon't worry, the zips aren't deleted.")
             break
         
-        elif choice=="cls" or choice=="clear":
-            #Clearing the screen
-            os.system('cls' if os.name == 'nt' else 'clear')
+        elif choice.lower() in ["cls", "clear"]:
+            cls_()
+            continue
         
         else:
             print('Error: Please use euther "y" or "n"')
@@ -642,7 +642,7 @@ Please check your internet connection.""")
 
                 #Clearing the screen.
                 elif choice.lower() in ["cls", "clear"]:
-                    os.system('cls' if os.name == 'nt' else 'clear')
+                    cls_()
                     continue
 
                 #Choice was invalid...
@@ -667,25 +667,25 @@ type "help" for a more thorough help site.""")
         starting_choice=input("What do you want to do? ").lower()
         
         #starting the main feature.
-        if starting_choice=="s" or starting_choice=="start":
+        if starting_choice in ["s", "start"]:
             list_folders()
             processing_folders()
         
         #Checking the version
-        elif starting_choice=="ver" or starting_choice=="version":
+        elif starting_choice in ["ver", "version"]:
             update_check(url=f"https://api.github.com/repos/{variables.repo_owner}/{variables.repo_name}/releases/latest")
         
-        elif starting_choice=="cls" or starting_choice=="clear":
+        elif starting_choice in ["cls", "clear"]:
             cls_()
         
         #Closing the program
-        elif starting_choice=="esc" or starting_choice=="exit" or starting_choice=="close":
+        elif starting_choice in ["esc", "exit", "close"]:
             exit()
         
-        elif starting_choice=="license":
+        elif starting_choice == "license":
             license()
         
-        elif starting_choice=="help":
+        elif starting_choice == "help":
             helpsite()
 
 if __name__=="__main__":

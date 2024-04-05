@@ -1,3 +1,4 @@
+#Importing Modules
 import ctypes, os, shutil, zipfile, requests
 
 #The Software startup and telling what is needed.
@@ -94,6 +95,7 @@ def success_msg():
  ___) | | |_| | | |___  | |___  | |___   ___) |  ___) | |_| |_| |_|
 |____/   \\___/   \\____|  \\____| |_____| |____/  |____/  (_) (_) (_)
           """)
+    return
 
 #Something went wrong while splitting.
 def error_msg():
@@ -146,7 +148,7 @@ def error_msg():
                                                    tkeLAAAAAAAAAAAAAAABXw""")
     return
 
-#The splitter is done
+#The splitter is done message
 def end():
     print("""Your splitting is finished. yayyyyyyy!!!!!
 
@@ -213,6 +215,9 @@ and
 even if something works for someone it might not work for others.
 I hope you have a great life""")
 
+def cls_():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def license():
     print("""
 THE FUCK PAYING! ATTRIBUTE AND DONATE LICENSE (TFPADL)
@@ -240,22 +245,23 @@ Ingenarel
 #Variables for runtime
 class variables:
     #The title Variable
-    local_version="v0.8"
+    local_version="v0.7"
     title=f"Split It! version {local_version}"
     
     #URL Specific stuff
     repo_owner = "ingenarel"
     repo_name = "Split-It"
     
-    #folder specific variables for copying/other
+    #folder specific variables for copying/other used in and for the "processing_folders" function
     folder_name=""
     
+    #The lookup is for processing the folders and Variables for the "processing_folders" function
     folder_lookup={"1": "config", "2": "data", "3": "mesh", "4": "guiding", "5": "noise", "6": "particles"}
     current_folder=1
     max_folders=6
 
     output_dir=""
-    
+
     file_count=0
     source_folder=""
     folder_list=""
@@ -281,6 +287,11 @@ def list_folders():
             #print(variables.folder_list) #For debugging if something goes to shit
             if variables.folder_name not in variables.folder_list:
                 error_msg()
+
+            # tried adding this too but cls isn't working.
+            elif variables.folder_name=="cls":
+                cls_()
+                return    
                 
             else:
                 return
@@ -290,8 +301,10 @@ def list_folders():
 
 #Function for copying all the folders.
 def processing_folders():
+    #That while loop is for each folder "config, data, mesh, guiding, noise, particles"
     while variables.current_folder<variables.max_folders+1:
         while True:
+            #That while loop is for the file count to not end up at 0
             if variables.file_count==0:
                 while True:
                     try:
@@ -300,21 +313,27 @@ def processing_folders():
                         print(f"Nuh uh! Numbers only!\n")
                     
                     if variables.file_count < 1:
-                        print("Nuh uh! There has to be at least 10 files. ")
+                        print("Nuh uh! There has to be at least 10 files. ")    #why? it should work if the file count is anything but 0
                     
                     elif variables.file_count > 9:
                         break
             
+            #Getting the output directory and source folder.
             variables.output_dir=str(variables.folder_lookup.get(str(variables.current_folder)))
             variables.source_folder=os.path.join(variables.folder_name, variables.output_dir)
 
+            #splitting >w<
             print(f"Please wait while I split the {variables.folder_lookup.get(str(variables.current_folder))} files... >.<")
             
+            #If the folder doesn't exist, make one
             try:
                 os.makedirs(os.path.join(variables.destination_base_folder, str(variables.folder_count), variables.folder_name, variables.output_dir), variables.exist_ok)
+            
+            #if the folder does exist, just pass out.
             except FileExistsError:
                 pass
             
+            #The actual copying finally happens.
             for filename in os.listdir(variables.source_folder):
                 variables.source_file = os.path.join(variables.source_folder, filename)
                 
@@ -332,21 +351,24 @@ def processing_folders():
                     except FileExistsError:
                         pass
             break
+        
+        #setting the variables back to what they should be
         variables.count=0
         variables.folder_count=1
         variables.current_folder+=1
         variables.output_dir=str(variables.folder_lookup.get(str(variables.current_folder)))
         print(variables.current_folder)
+    
+    #resetting the variables used that are needed to be resetted
     variables.count=0
     variables.folder_count=1
     variables.current_folder=1
     variables.output_dir=""
     zip_files()
 
-
-
-#THIS IS THE ZIPPER AND I FUCKING HAD TO PUT IT HERE BECAUSE IT WASN'T FUCKING WORKING AND NOW I'M TESTING IT I JUST WANT TO FUCKING KILL MYSELF FUCK
+#The zipper function (No humans have been harmed at the making.)
 def zip_files():
+    #Zipping >w<
     print("Please wait while I zip the files... >.<")
 
     # Change directory to the destination folder
@@ -356,7 +378,7 @@ def zip_files():
     for variables.folder_name in os.listdir():
         if os.path.isdir(variables.folder_name):
             # Create a zip file with the same name as the folder
-            with zipfile.ZipFile(f"{variables.folder_name}.zip", "w") as zip_file:
+            with zipfile.ZipFile(f"Split-It-{variables.folder_name}.zip", "w") as zip_file:
                 # Add all files and empty folders in the folder to the zip file
                 for root, dirs, files in os.walk(variables.folder_name):
                     # Add files
@@ -370,9 +392,11 @@ def zip_files():
                                                 os.path.join(variables.folder_name))
                         zip_file.write(os.path.join(root, dir), dir_path)
 
+    #Zipping finished and the user is being asked if they wanna delete the folders.
     print("All folders zipped successfully.")
     ask_deletion()
 
+#Asking if filders (except the zip files!) want to be deleted.
 def ask_deletion():
     while True:
         print("""
@@ -389,22 +413,88 @@ The zip files won't be deleted, just the folders and files that were created in 
             break
         
         elif choice=="cls" or choice=="clear":
+            #Clearing the screen
             os.system('cls' if os.name == 'nt' else 'clear')
         
         else:
             print('Error: Please use euther "y" or "n"')
+    os.chdir("..")
+    success_msg()
     end()
 
-
 def helpsite():
-    print("""
-The main commands:
-    s or start: Starts the program main feature.
-    cls or clear: Clears the screen.
-    ver or version: Checks for updates
-Other commands:
-    exit() or exit or close: Closes the program.
-    """)
+    print("""______________________________________________________________________________________________________________________________________________________
+|:‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾:|
+|:   COMMAND   | ALSO KNOWN |                                                     DESCRIPTION                                                       :|
+|:    NAME     |     AS     |                                                                                                                       :|
+|:=============|============|=======================================================================================================================:|
+|:             |            |   It checks your version. then displayes your current version and the latest version. If the current version is the   :|
+|:             |            |  is updated than the latest stable built release, the says that you're using a version that is newer than the latest  :|
+|:     ver     |   version  |   stable build. And if the current version is older than the latest version, it says that there is a newer version    :|
+|:             |            |                 available. If the version is the same as the latest version, it just tells you that.                  :|
+|:             |            |                                           Works only on the main page.                                                :|
+|:=============|============|=======================================================================================================================:|
+|:    cls      |   clear    |                            Clears the screen. Works anywhere where you can put an input.                              :|
+|:=============|============|=======================================================================================================================:|
+|:    exit     | esc, close |                                   Exits the program. Works only on the main page.                                     :|
+|:=============|============|=======================================================================================================================:|
+|:s            |start       |    At first it goes to your cache folder. Then it takes the first x ammount files from the config file. x is you,     :|
+|:             |            |   setting how much files it will take per folder. it could be 1/2/3 basically anything. Only an integer tho lol. It   :|
+|:             |            |   pastes those files in a different folder. It will first create a folder called Destination. It will store all the   :|
+|:             |            |  files and folders that are split. Then it creates another folder inside it that's the same name as your simulation   :|
+|:             |            |     cache folder. And then create another folder called config inside it and then paste those files in the config     :|
+|:             |            |                                   folder. To show it visually it's doing this...                                      :|
+|:             |            |                                                                                                                       :|
+|:             |            |                                         Destination                                                                   :|
+|:             |            |                                           -> 1                                                                        :|
+|:             |            |                                             ->simulation folder name                                                  :|
+|:             |            |                                               ->config                                                                :|
+|:             |            |                                                 ->the first x amount of files                                         :|
+|:             |            |                                                                                                                       :|
+|:             |            |   The next step is doing the same thing for all those files. Creates folders called 1, 2, 3 etc basically an unique   :|
+|:             |            |                            folder for each x amount of files so now it looks like this...                             :|
+|:             |            |                                                                                                                       :|
+|:             |            |                                        Destination                                                                    :|
+|:             |            |                                          -> 1                                                                         :|
+|:             |            |                                            -> simulation folder name                                                  :|
+|:             |            |                                              -> config                                                                :|
+|:             |            |                                                -> the first x amount of files                                         :|
+|:             |            |                                          -> 2                                                                         :|
+|:             |            |                                            -> simulation folder name                                                  :|
+|:             |            |                                              -> config                                                                :|
+|:             |            |                                                -> the second x amount of files                                        :|
+|:             |            |                                                                                                                       :|
+|:             |            |   Then it does the same thing for the data and mesh folder in your simulation directory. then it asks questions it    :|
+|:             |            |       would do with the guiding, noise, and particles folder. either split them too if they have files in them        :|
+|:             |            |    (which i personally didn't have on my projects) or just create those folders that are named guiding, noise, and    :|
+|:             |            |  particles in the split cache directory so it works properly. then it copy pastes your blend file in each sub folder  :|
+|:             |            |                                       in the destination folder. that means...                                        :|
+|:             |            |                                                                                                                       :|
+|:             |            |                                        Destination                                                                    :|
+|:             |            |                                          -> 1                                                                         :|
+|:             |            |                                            -> your blend file                                                         :|
+|:             |            |                                            -> simulation folder name                                                  :|
+|:             |            |                                              -> config                                                                :|
+|:             |            |                                                -> the first x amount of files                                         :|
+|:             |            |                                                                                                                       :|
+|:             |            |                                          -> 2                                                                         :|
+|:             |            |                                            -> your blend file                                                         :|
+|:             |            |                                            -> simulation folder name                                                  :|
+|:             |            |                                              -> config                                                                :|
+|:             |            |                                                -> the second x amount of files                                        :|
+|:             |            |                                                                                                                       :|
+|:             |            |  etc etc then it creates a zip for the 1 folder. then the 2 folder. so on and so on the zip files are created in the  :|
+|:             |            |     Destination folder Then it asks you if it shoudld delete the subfolders that were created while the spliiting     :|
+|:             |            |  happened. You can choose to delete them. If you wish to do so, it will delete those 1, 2, 3 folders. Deleting those  :|
+|:             |            |   folders won't matter because you'll still have the zips.This functions was created so that you don't waste extra    :|
+|:             |            |                                          space. Works only on the main menu.                                          :|
+|:=============|============|=======================================================================================================================:|
+|:   license   |            |                                   Shows the licnese. Works only on the main menu.                                     :|
+|:_____________|____________|_______________________________________________________________________________________________________________________:|
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+          """)
+    
+# |::| - this is for the devs so that we can copy paste it every time we need to expand the box
 
 def update_check(**kwargs):
     try:
@@ -430,7 +520,7 @@ You need to provide valid credentials, such as a username and password or an aut
 """)
         
             elif response.status_code == 403:
-                print("""ERROR 403: Unauthorized
+                print("""ERROR 403: Forbidden.
 
 You're being denied access, plain and simple.")
 Even with valid credentials, you're not allowed to access the resource because you lack the necessary permissions.
@@ -439,7 +529,7 @@ You need to request permission from the appropriate authorities.
 """)
         
             elif response.status_code == 404:
-                print("""ERROR 404: Unauthorized.
+                print("""ERROR 404: File not found.
 
 This status code indicates that the server couldn't find the resource you requested.
 It's like looking for a book on a library shelf only to discover it's not there. 
@@ -448,7 +538,7 @@ Double-check the URL or try searching for the resource in a different location.
 """)
         
             elif response.status_code == 422:
-                print("""ERROR 422: Unauthorized.
+                print("""ERROR 422: Unprocessable Entity.
 
 Ah, it seems there's a problem with the data you provided. ")
 This status code typically occurs when the server understands your request but can't process it due to invalid data.
@@ -457,7 +547,7 @@ Review the data you submitted and ensure it meets the server's requirements.
 """)
             
             elif response.status_code == 429:
-                print("""ERROR 429: Unauthorized.
+                print("""ERROR 429: Too Many Requests.
 
 Slow down there! You've been making too many requests to the server within a short period. ")
 This status code indicates that you've hit a rate limit, and the server is asking you to ease up for a bit. ")
@@ -474,7 +564,7 @@ The server is apologizing for the inconvenience and asking for your patience whi
 """)
         
             elif response.status_code == 503:
-                print("""ERROR 503 Unauthorized:
+                print("""ERROR 503: Server was not ready
 
 Hold your horses! The server is currently unavailable to handle your request.
 This status code typically occurs due to maintenance or overload.
@@ -496,7 +586,7 @@ Please check your internet connection.""")
         print(f"Latest version: {latest_version}.")
         
         if variables.local_version>latest_version:
-            print("A newer version than expected is there.")
+            print("You're using a version that is newer than the latest stable built.")
     
         elif variables.local_version==latest_version:
             print("You are already using the latest version.")
@@ -528,29 +618,36 @@ Please check your internet connection.""")
                                     file.write(download_response.content)
                                 print(f"Downloaded: {asset.get('name')}")
                                 break
-
+                            
+                            #There has been an issue downloading
                             else:
                                 print(f"Failed to download: {asset.get('name')}")
                                 input("press enter to go back to simulation folder select")
                                 break
 
+                        #Downloading is done 👍
                         print(f"All assets from the latest release have been downloaded to '{download_folder}'.")
                         input("press enter to go back to simulation folder select")
                         break
 
+                    #no assets found
                     else:
                         print("No assets found in the latest release.")
                         input("press enter to go back to simulation folder select")
                         break
+
+                #Skipped the download
                 elif choice.lower() == "n":
                     print("Skipping download.")
                     input("press enter to go back to simulation folder select")
                     break
 
+                #Clearing the screen.
                 elif choice.lower() in ["cls", "clear"]:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     continue
 
+                #Choice was invalid...
                 else:
                     print("Invalid choice. Please enter 'yes' or 'no'.")
                     continue
@@ -560,31 +657,38 @@ Please check your internet connection.""")
 
         return
     
-
+#the main function that handles the stuff.
 def main_func():
     while True:
         print("""
-You can type "Ver" or "Version" to check if an update is there.
-You can type "cls" or "clear screen" to clean the Terminal/Command Prompt.
-Type "s" or "start" to use the splitter.
-Type license to see the license.
-You can use exit() or exit or close to exit. 
-              """)
+You can type "Ver" to check if an update is there.
+You can type "cls" to clean the Terminal/Command Prompt.
+Type "s" to use the splitter.
+type "help" for a more thorough help site.""")
         
         starting_choice=input("What do you want to do? ").lower()
         
+        #starting the main feature.
         if starting_choice=="s" or starting_choice=="start":
             list_folders()
             processing_folders()
         
+        #Checking the version
         elif starting_choice=="ver" or starting_choice=="version":
             update_check(url=f"https://api.github.com/repos/{variables.repo_owner}/{variables.repo_name}/releases/latest")
         
-        elif starting_choice=="exit()" or starting_choice=="exit" or starting_choice=="close":
+        elif starting_choice=="cls" or starting_choice=="clear":
+            cls_()
+        
+        #Closing the program
+        elif starting_choice=="esc" or starting_choice=="exit" or starting_choice=="close":
             exit()
         
         elif starting_choice=="license":
             license()
+        
+        elif starting_choice=="help":
+            helpsite()
 
 if __name__=="__main__":
     start(title=variables.title)

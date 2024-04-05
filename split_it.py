@@ -26,22 +26,7 @@ ________       ________    ___           ___      _________                ___  
 | (__| (_| || (__ | | | ||  __/    \\__ \\| |_) || || || |_ | |_|  __/| |       |  _|| (_) || |        ___) || | | ||  __/|  __/| |_) || | | |_     |_|
  \\___|\\__,_| \\___||_| |_| \\___|    |___/| .__/ |_||_| \\__| \\__|\\___||_|       |_|   \\___/ |_|       |____/ |_| |_| \\___| \\___|| .__/|___| \\__|    (_)
                                         |_|                                                                                   |_|""")
-#     print("""________________________________________________________________________________________________________________________________________________
-# |:‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾:|
-# |:   Wanna support me?                                                                                                                        :|
-# |:                                                                                                                                            :|
-# |:   SUPPORT THE SHEEPIT DEVS!!!! -                                                 https://www.sheepit-renderfarm.com/donation               :|
-# |:                                                                                                                                            :|
-# |:   Follow me on Instagram -                                                       https://www.instagram.com/saad_abdullah999666/            :|
-# |:   Reddit account -                                                               https://reddit.com/user/INGENAREL                         :|
-# |:   Discord -                                                                      ingenarel#2846                                            :|
-# |:   My youtube channel -                                                           https://www.youtube.com/channel/UC90Tar8Bpx3Q8UqpM8qxWZw  :|
-# |:   Sponsor me on SheepIt -                                                        https://www.sheepit-renderfarm.com/user/ingenarel/profile :|
-# |:   Here's my public renderkey if you wanna connect a device to my account -       XQVDMUjdOKt7LBldxjuF0YERqLoGnExbeh8yUrce                  :|
-# |:                                                                                                                                            :|
-# |:____________________________________________________________________________________________________________________________________________:|
-# ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-#           """)
+
     print("""
 ________________________________________________________________________________________________________________________________________________________________________________
 |:‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾:|
@@ -281,17 +266,17 @@ class variables:
 def list_folders():
     try:
         while True:
+            while True:
             #the input for the folder to copy from.
-            variables.folder_name=input("Please enter your foldername. (CASE SENSITIVE!)")#.lower() #Just in case you change your mind.
+                variables.folder_name=input("Please enter your foldername. (CASE SENSITIVE!)")#.lower() #Just in case you change your mind.
+                if variables.folder_name=="cls" or variables.folder_name=="clear":
+                    cls_()
+                else:
+                    break
             variables.folder_list=[folder for folder in os.listdir('.') if os.path.isdir(folder)]
             #print(variables.folder_list) #For debugging if something goes to shit
             if variables.folder_name not in variables.folder_list:
                 error_msg()
-
-            # tried adding this too but cls isn't working.
-            elif variables.folder_name=="cls":
-                cls_()
-                return    
                 
             else:
                 return
@@ -475,7 +460,7 @@ def helpsite():
 |:=============|============|=======================================================================================================================:|
 |:    exit     | esc, close |                                   Exits the program. Should work only on the main menu.                               :|
 |:=============|============|=======================================================================================================================:|
-|:s            |start       |    At first it goes to your cache folder. Then it takes the first x ammount files from the config file. x is you,     :|
+|:             |            |    At first it goes to your cache folder. Then it takes the first x ammount files from the config file. x is you,     :|
 |:             |            |   setting how much files it will take per folder. it could be 1/2/3 basically anything. Only an integer tho lol. It   :|
 |:             |            |   pastes those files in a different folder. It will first create a folder called Destination. It will store all the   :|
 |:             |            |  files and folders that are split. Then it creates another folder inside it that's the same name as your simulation   :|
@@ -499,7 +484,7 @@ def helpsite():
 |:             |            |                                          -> 2                                                                         :|
 |:             |            |                                            -> simulation folder name                                                  :|
 |:             |            |                                              -> config                                                                :|
-|:             |            |                                                -> the second x amount of files                                        :|
+|:      s      |    start   |                                                -> the second x amount of files                                        :|
 |:             |            |                                                                                                                       :|
 |:             |            |   Then it does the same thing for the data and mesh folder in your simulation directory. then it asks questions it    :|
 |:             |            |       would do with the guiding, noise, and particles folder. either split them too if they have files in them        :|
@@ -531,7 +516,7 @@ def helpsite():
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
           """)
     
-# |::| - this is for the devs so that we can copy paste it every time we need to expand the box
+    # |::| - this is for the devs so that we can copy paste it every time we need to expand the box
 
 def update_check(**kwargs):
     try:
@@ -690,6 +675,35 @@ Please check your internet connection.""")
 
         return
     
+def credits():
+        print("""______________________________________________________________________________________________________________________________________________________________________
+|:‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾:|
+|:   Ingenarel                                                                                                                                                      :|
+|:                                                                                                                                                                  :|
+|:   Follow me on Instagram -                                                  https://www.instagram.com/saad_abdullah999666/                                       :|
+|:   Reddit account -                                                          https://reddit.com/user/INGENAREL                                                    :|
+|:   Discord -                                                                 ingenarel#2846                                                                       :|
+|:   My youtube channel -                                                      https://www.youtube.com/channel/UC90Tar8Bpx3Q8UqpM8qxWZw?sub_confirmation=1          :|
+|:   Sponsor me on SheepIt -                                                   https://www.sheepit-renderfarm.com/user/ingenarel/profile                            :|
+|:   My github account -                                                       https://github.com/ingenarel                                                         :|
+|:   Here's my public renderkey if you wanna connect a device to my account -  XQVDMUjdOKt7LBldxjuF0YERqLoGnExbeh8yUrce                                             :|
+|:__________________________________________________________________________________________________________________________________________________________________:|
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+          """)
+        
+        print("""______________________________________________________________________________________________________________________________________________________
+|:‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾:|
+|:   Chaosminecraft                                                                                                                                 :|
+|:   His youtube channel -                                                          https://www.youtube.com/@chaosminecraft3399                     :|
+|:   Sponsor him on SheepIt -                                                       https://www.sheepit-renderfarm.com/user/Chaosminecraft/profile  :|
+|:   His github account -                                                           https://github.com/Chaosminecraft                               :|
+|:__________________________________________________________________________________________________________________________________________________:|
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+          """)
+
+    # |::| - this is for the devs so that we can copy paste it every time we need to expand the box
+
+
 #the main function that handles the stuff.
 def main_func():
     while True:
@@ -697,7 +711,8 @@ def main_func():
 You can type "Ver" to check if an update is there.
 You can type "cls" to clean the Terminal/Command Prompt.
 Type "s" to use the splitter.
-type "help" for an in depth guide about every command""")
+Type "help" for an in depth guide about every command
+Type "c" for credits.        """) 
         
         starting_choice=input("What do you want to do? ").lower()
         
@@ -719,6 +734,9 @@ type "help" for an in depth guide about every command""")
         
         elif starting_choice == "license":
             license()
+
+        elif starting_choice in ["credits", "c"]:
+            credits()
         
         elif starting_choice == "help":
             helpsite()

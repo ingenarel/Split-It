@@ -99,7 +99,8 @@ def success_msg():
 
 #Something went wrong while splitting.
 def error_msg():
-    print("""        vXFAAAAAAAAAAAAAAAAAAAAAAAAAAOR2r
+    print("""
+                vXFAAAAAAAAAAAAAAAAAAAAAAAAAAOR2r
    p6HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCBBBBZy
          hYDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPw
                VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3
@@ -209,9 +210,8 @@ def end():
 ++++++++@++****#%##**********###@#++++#*+++++##+++#@%#++*##***********#%*#***##%++++++%+++++++++++++
 
 
-Please check your zip files before you upload your project. Because
-I'm dumb
-and
+Please check your zip files before you upload your project.
+Because, 
 even if something works for someone it might not work for others.
 I hope you have a great life""")
 
@@ -469,11 +469,11 @@ def helpsite():
 |:             |            |  is updated than the latest stable built release, the says that you're using a version that is newer than the latest  :|
 |:     ver     |   version  |   stable build. And if the current version is older than the latest version, it says that there is a newer version    :|
 |:             |            |                 available. If the version is the same as the latest version, it just tells you that.                  :|
-|:             |            |                                           Works only on the main page.                                                :|
+|:             |            |                                           Should work only on the main menu.                                          :|
 |:=============|============|=======================================================================================================================:|
 |:    cls      |   clear    |                            Clears the screen. Works anywhere where you can put an input.                              :|
 |:=============|============|=======================================================================================================================:|
-|:    exit     | esc, close |                                   Exits the program. Works only on the main page.                                     :|
+|:    exit     | esc, close |                                   Exits the program. Should work only on the main menu.                               :|
 |:=============|============|=======================================================================================================================:|
 |:s            |start       |    At first it goes to your cache folder. Then it takes the first x ammount files from the config file. x is you,     :|
 |:             |            |   setting how much files it will take per folder. it could be 1/2/3 basically anything. Only an integer tho lol. It   :|
@@ -524,9 +524,9 @@ def helpsite():
 |:             |            |     Destination folder Then it asks you if it shoudld delete the subfolders that were created while the spliiting     :|
 |:             |            |  happened. You can choose to delete them. If you wish to do so, it will delete those 1, 2, 3 folders. Deleting those  :|
 |:             |            |   folders won't matter because you'll still have the zips.This functions was created so that you don't waste extra    :|
-|:             |            |                                          space. Works only on the main menu.                                          :|
+|:             |            |                                          space. Should work only on the main menu.                                    :|
 |:=============|============|=======================================================================================================================:|
-|:   license   |            |                                   Shows the licnese. Works only on the main menu.                                     :|
+|:   license   |            |                                   Shows the licnese. Should work only on the main menu.                               :|
 |:_____________|____________|_______________________________________________________________________________________________________________________:|
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
           """)
@@ -659,24 +659,20 @@ Please check your internet connection.""")
                             #There has been an issue downloading
                             else:
                                 print(f"Failed to download: {asset.get('name')}")
-                                input("press enter to go back to simulation folder select")
                                 break
 
                         #Downloading is done 👍
                         print(f"All assets from the latest release have been downloaded to '{download_folder}'.")
-                        input("press enter to go back to simulation folder select")
                         break
 
                     #no assets found
                     else:
                         print("No assets found in the latest release.")
-                        input("press enter to go back to simulation folder select")
                         break
 
                 #Skipped the download
                 elif choice.lower() == "n":
                     print("Skipping download.")
-                    input("press enter to go back to simulation folder select")
                     break
 
                 #Clearing the screen.
@@ -701,7 +697,7 @@ def main_func():
 You can type "Ver" to check if an update is there.
 You can type "cls" to clean the Terminal/Command Prompt.
 Type "s" to use the splitter.
-type "help" for a more thorough help site.""")
+type "help" for an in depth guide about every command""")
         
         starting_choice=input("What do you want to do? ").lower()
         

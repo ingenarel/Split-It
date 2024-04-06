@@ -1,6 +1,11 @@
 #Importing Modules
 import ctypes, os, shutil, zipfile, requests
 
+HWND = ctypes.windll.kernel32.GetConsoleWindow()
+
+# Maximize the terminal window
+ctypes.windll.user32.ShowWindow(HWND, 3)  # 3 for SW_MAXIMIZE
+
 #The Software startup and telling what is needed.
 def start(**kwargs):
     ctypes.windll.kernel32.SetConsoleTitleW(kwargs["title"])

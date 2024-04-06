@@ -269,7 +269,7 @@ def list_folders():
             while True:
             #the input for the folder to copy from.
                 variables.folder_name=input("Please enter your foldername. (CASE SENSITIVE!)")#.lower() #Just in case you change your mind.
-                if variables.folder_name=="cls" or variables.folder_name=="clear":
+                if variables.folder_name in ["cls", "clear"]:
                     cls_()
                 else:
                     break
@@ -290,7 +290,7 @@ def processing_folders():
     while variables.current_folder<variables.max_folders+1:
         while True:
             #That while loop is for the file count to not end up at 0
-            if variables.file_count==0:
+            if variables.file_count == 0:
                 while True:
 
                     variables.file_count=int(input("Enter the number of files to copy in to each folder: "))
@@ -426,7 +426,7 @@ Do you want to delete the folders that were created when you split the project?
 The zip files won't be deleted, just the folders and files that were created in order to make those zips.""")
         choice=input("y to delete and n to cancel: ").lower()[0:1]
         
-        if choice=="y":
+        if choice == "y":
             # Loop through all items in the folder and delete them
             for item in os.listdir():
                 if os.path.isdir(item):
@@ -526,7 +526,7 @@ def update_check(**kwargs):
             latest_version = latest_release.get('tag_name')
 
         else:
-            if response.status_code==400:
+            if response.status_code == 400:
                 print("""ERROR 400: bad request.
 
 This status code indicates that there's something off with the request you sent to the server.
@@ -610,7 +610,7 @@ Please check your internet connection.""")
         if variables.local_version>latest_version:
             print("You're using a version that is newer than the latest stable built.")
     
-        elif variables.local_version==latest_version:
+        elif variables.local_version == latest_version:
             print("You are already using the latest version.")
         
         else:
@@ -741,5 +741,5 @@ Type "c" for credits.        """)
         elif starting_choice == "help":
             helpsite()
 
-if __name__=="__main__":
+if __name__ == "__main__":
     start(title=variables.title)

@@ -1,10 +1,29 @@
 #Importing Modules
-import ctypes, os, shutil, zipfile, requests
+import ctypes, os, shutil, zipfile, requests, pyautogui, platform
 
-HWND = ctypes.windll.kernel32.GetConsoleWindow()
+system = platform.system()
 
-# Maximize the terminal window
-ctypes.windll.user32.ShowWindow(HWND, 3)  # 3 for SW_MAXIMIZE
+def windows_fullscreen():
+    pyautogui.hotkey('win', 'up')
+
+def macos_fullscreen():
+    try:
+        pyautogui.hotkey('ctrl', 'cmd', 'f')
+    except:
+        pyautogui.hotkey('ctrl', 'win', 'f')
+
+def linux_fullscreen():
+    try:
+        pyautogui.hotkey('ctrl', 'super', 'f')
+    except:
+        pyautogui.hotkey('ctrl', 'win', 'f')
+
+if system == 'Windows':
+    windows_fullscreen()
+elif system == 'Linux':
+    linux_fullscreen()
+elif system == 'Darwin':
+    macos_fullscreen()
 
 #The Software startup and telling what is needed.
 def start(**kwargs):

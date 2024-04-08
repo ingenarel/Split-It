@@ -1,3 +1,5 @@
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+
 https://github.com/ingenarel/Split-It/assets/145784829/29cb15e3-649b-4b97-b04a-948846fc703d
 
 ```

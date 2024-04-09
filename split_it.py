@@ -1,5 +1,6 @@
 #Importing Modules
 import ctypes, os, shutil, zipfile, requests, pyautogui, platform
+from tqdm import tqdm
 
 system = platform.system()
 
@@ -264,7 +265,7 @@ def license():
 #Variables for runtime
 class variables:
     #The title Variable
-    local_version="v0.9"
+    local_version="v1.0"
     title=f"Split It! version {local_version}"
     
     #URL Specific stuff
@@ -350,19 +351,20 @@ def processing_folders():
             except FileExistsError:
                 pass
             
-            #The actual copying finally happens.
-            for filename in os.listdir(variables.source_folder):
+            # The actual copying finally happens.
+            source_files = os.listdir(variables.source_folder)  # List of files in the source folder
+            for filename in tqdm(source_files, desc="Copying files"):  # tqdm wrapper for progress bar
                 variables.source_file = os.path.join(variables.source_folder, filename)
                 
-                #Copy files to the current destination folder
+                # Copy files to the current destination folder
                 shutil.copy(variables.source_file, os.path.join(variables.destination_base_folder, str(variables.folder_count), variables.folder_name, variables.output_dir))
                 
-                variables.count+=1
+                variables.count += 1
                 
-                #If specified number of files are copied, reset the file counter and moce to the next destination folder
+                # If specified number of files are copied, reset the file counter and move to the next destination folder
                 if variables.count == variables.file_count:
-                    variables.count=0
-                    variables.folder_count+=1
+                    variables.count = 0
+                    variables.folder_count += 1
                     try:
                         os.makedirs(os.path.join(variables.destination_base_folder, str(variables.folder_count), variables.folder_name, variables.output_dir))
                     except FileExistsError:
@@ -410,8 +412,11 @@ def blend_copypaste():
     if not os.path.exists(destination_folder):
         os.makedirs(destination_folder)
 
-    # Iterate over immediate subdirectories in the Destination folder
-    for directory in os.listdir(destination_folder):
+    # Get a list of immediate subdirectories in the Destination folder
+    directories = [d for d in os.listdir(destination_folder) if os.path.isdir(os.path.join(destination_folder, d))]
+
+    # Iterate over immediate subdirectories in the Destination folder with a progress bar
+    for directory in tqdm(directories, desc="Copying blend file"):
         # Construct destination path
         destination_path = os.path.join(destination_folder, directory, os.path.basename(source_file))
         # Copy the file to each subdirectory
@@ -424,56 +429,59 @@ def blend_copypaste():
 
 #The zipper function (No humans have been harmed at the making.)
 def zip_files():
-    #Zipping >w<
     print("Please wait while I zip the files... >.<")
 
     # Change directory to the destination folder
     os.chdir(variables.destination_folder)
 
-    # Loop through each folder in the destination folder
-    for variables.folder_name in os.listdir():
-        if os.path.isdir(variables.folder_name):
-            # Create a zip file with the same name as the folder
-            with zipfile.ZipFile(f"Split-It-{variables.folder_name}.zip", "w") as zip_file:
-                # Add all files and empty folders in the folder to the zip file
-                for root, dirs, files in os.walk(variables.folder_name):
-                    # Add files
-                    for file in files:
-                        zip_file.write(os.path.join(root, file),
-                                    os.path.relpath(os.path.join(root, file),
-                                                    os.path.join(variables.folder_name)))
-                    # Add empty directories
-                    for dir in dirs:
-                        dir_path = os.path.relpath(os.path.join(root, dir),
-                                                os.path.join(variables.folder_name))
-                        zip_file.write(os.path.join(root, dir), dir_path)
+    # Get a list of directories in the current folder
+    directories = [d for d in os.listdir() if os.path.isdir(d)]
 
-    #Zipping finished and the user is being asked if they wanna delete the folders.
+    # Loop through each folder in the destination folder with a progress bar
+    for folder_name in tqdm(directories, desc="Zipping folders"):
+        # Create a zip file with the same name as the folder
+        with zipfile.ZipFile(f"Split-It-{folder_name}.zip", "w", zipfile.ZIP_DEFLATED) as zip_file:
+            # Walk the directory, and add all files and empty folders to the zip file
+            for root, dirs, files in os.walk(folder_name):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    zip_file.write(file_path, os.path.relpath(file_path, folder_name))
+                for dir in dirs:
+                    dir_path = os.path.join(root, dir)
+                    zip_info = zipfile.ZipInfo(os.path.relpath(dir_path, folder_name) + "/")
+                    zip_file.writestr(zip_info, '')
+
     print("All folders zipped successfully.")
     ask_deletion()
 
 #Asking if filders (except the zip files!) want to be deleted.
 def ask_deletion():
     while True:
-        print("")
-        print("Do you want to delete the folders that were created when you split the project?")
+        print("\nDo you want to delete the folders that were created when you split the project?")
         print("The zip files won't be deleted, just the folders and files that were created in order to make those zips.")
-        choice=input("y to delete and n to cancel: ").lower()[0:1]
-        
+        choice = input("y to delete and n to cancel: ").lower()[0:1]
+
         if choice == "y":
-            # Loop through all items in the folder and delete them
-            for item in os.listdir():
-                if os.path.isdir(item):
+            # Get a list of directories to delete
+            directories_to_delete = [item for item in os.listdir() if os.path.isdir(item)]
+            total_directories = len(directories_to_delete)
+
+            if total_directories > 0:
+                print(f"\nDeleting {total_directories} directories...")
+                # Loop through all directories and delete them with a progress bar
+                for item in tqdm(directories_to_delete, desc="Deleting directories"):
                     os.system(f"rd /s /q \"{item}\"")
-            print("\nAll split cache folders deleted successfully.\nDon't worry, the zips aren't deleted.")
+                print("\nAll split cache folders deleted successfully.\nDon't worry, the zips aren't deleted.")
+            else:
+                print("\nNo directories found to delete.")
             break
-        
+
         elif choice.lower() in ["cls", "clear"]:
             cls_()
             continue
-        
+
         else:
-            print('Error: Please use euther "y" or "n"')
+            print('Error: Please use either "y" or "n"')
     os.chdir("..")
     success_msg()
     end()

@@ -265,7 +265,7 @@ def license():
 #Variables for runtime
 class variables:
     #The title Variable
-    local_version="v1.0"
+    local_version="v1.1"
     title=f"Split It! version {local_version}"
     
     #URL Specific stuff
@@ -303,7 +303,7 @@ def list_folders():
         while True:
             while True:
             #the input for the folder to copy from.
-                variables.folder_name=input("Please enter your foldername. (CASE SENSITIVE!)")#.lower() #Just in case you change your mind.
+                variables.folder_name=input("Please enter your foldername. (CASE SENSITIVE!)").strip() #.lower() #Just in case you change your mind.
                 if variables.folder_name in ["cls", "clear"]:
                     cls_()
                 else:
@@ -328,7 +328,7 @@ def processing_folders():
             if variables.file_count == 0:
                 while True:
 
-                    variables.file_count=int(input("Enter the number of files to copy in to each folder: "))
+                    variables.file_count=int(input("Enter the number of files to copy in to each folder: ")).strip()
                     
                     if variables.file_count >= 1:
                         break
@@ -388,7 +388,7 @@ def processing_folders():
 def blend_copypaste():
     while True:
         # Ask for source file name
-        source_file = input("Enter the name of the blend file that you want to copy (with extension): ")
+        source_file = input("Enter the name of the blend file that you want to copy (with extension): ").strip()
 
         if source_file.lower() in ["cls", "clear"]:  # Check for "cls" or "clear" inputs
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -459,7 +459,7 @@ def ask_deletion():
     while True:
         print("\nDo you want to delete the folders that were created when you split the project?")
         print("The zip files won't be deleted, just the folders and files that were created in order to make those zips.")
-        choice = input("y to delete and n to cancel: ").lower()[0:1]
+        choice = input("y to delete and n to cancel: ").lower()[0:1].strip()
 
         if choice == "y":
             # Get a list of directories to delete
@@ -667,7 +667,7 @@ def update_check(**kwargs):
                 print("A new version is available. Do you want to download it?")
                 print("You if you want to use the latest version, you need to start it from the downloaded version though.")
                 print("It creates a folder called latest_build and stores the zip there.")
-                choice = input("press y to download and n to cancel: ")
+                choice = input("press y to download and n to cancel: ").strip()
                 
                 if choice.lower() == "y":
                     # Download the latest build
@@ -720,7 +720,7 @@ def update_check(**kwargs):
                     continue
     else:
         print("Failed to retrieve the latest version from GitHub. Please check your internet connection and try again.")
-        input("press enter to go back to the main menu.")
+        input("press enter to go back to the main menu.").strip()
 
         return
     

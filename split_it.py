@@ -328,7 +328,7 @@ def processing_folders():
             if variables.file_count == 0:
                 while True:
 
-                    variables.file_count=int(input("Enter the number of files to copy in to each folder: ")).strip()
+                    variables.file_count=int(input("Enter the number of files to copy in to each folder: ").strip())
                     
                     if variables.file_count >= 1:
                         break

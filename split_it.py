@@ -19,28 +19,31 @@ def cls_():
 
 def asking():
     while True:
-        i = input("What do you want to do?\n=> ").strip().lower()
-        if i in ["license", "l"]:
-            return "license"
-        elif i in ["s", "start"]:
-            return "start"
-        elif i in ["ver", "version"]:
-            return "version"
-        elif i in ["cls", "clear"]:
-            cls_()
-            print(grettings())
-        elif i in ["esc", "exit", "close"]:
+        try:
+            i = input("What do you want to do?\n=> ").strip().lower()
+            if i in ["license", "l"]:
+                return "license"
+            elif i in ["s", "start"]:
+                return "start"
+            elif i in ["ver", "version"]:
+                return "version"
+            elif i in ["cls", "clear"]:
+                cls_()
+                print(grettings())
+            elif i in ["esc", "exit", "close"]:
+                exit()
+            elif i in ["license", "l"]:
+                return "license"
+            elif i in ["credits", "c"]:
+                return "credits"
+            elif i == "help":
+                return "helpsite"
+            else:
+                print("")
+                print("Invalid input.")
+                print("")
+        except EOFError:
             exit()
-        elif i in ["license", "l"]:
-            return "license"
-        elif i in ["credits", "c"]:
-            return "credits"
-        elif i == "help":
-            helpsite()
-        else:
-            print("")
-            print("Invalid input.")
-            print("")
 
 def main():
     print(grettings())

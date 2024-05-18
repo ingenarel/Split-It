@@ -192,7 +192,7 @@ def asking():
         except (EOFError, KeyboardInterrupt):
             exit(__end())
 
-def start():
+def ask_for_blend_and_sim():
     while True:
         print("Select your cache folder")
         cache_folder_path = filedialog.askdirectory(title="Select your cache folder")
@@ -213,7 +213,9 @@ def start():
         else:
             break
     # print(f"\"{blend_file_path}\"")
-    # print(blend_file_size)
+    return cache_folder_path, blend_file_path
+
+def start(cache_folder_path, blend_file_path):
     cache_folders = os.listdir(cache_folder_path)
     # print(cache_folders)
     x =  set()           # a_set_to_check_there_are_more_or_less_files_in_a_folder

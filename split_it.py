@@ -259,10 +259,12 @@ Do you want to continue? press y to to continue and n to cancel
                 continue
     # print(folders_and_their_files)
 
-    __file__spliter__(folders_and_their_files, blend_file_path)
+    __spliter__(folders_and_their_files, blend_file_path)
 
-def __file__spliter__(files_in_dict, blend_file):
-    ...
+def __spliter__(files_in_dict, blend_file):
+    # print(files_in_dict)
+    for folders in files_in_dict:
+
 
 def main():
     if len(sys.argv) == 1:

@@ -282,8 +282,8 @@ def main():
                 commands.add("help")
             elif argument in ["credits", "c"]:
                 commands.add("credits")
-            elif argument in  ["s", "start"]:
-                commands.add("start")
+            elif argument.startswith("s"):
+                commands.add(argument)
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
 
@@ -294,9 +294,8 @@ def main():
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
-            elif command == "start":
-                start()
-
+            else:
+                print(command)
         # exit(__end())
 
 

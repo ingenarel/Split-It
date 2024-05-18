@@ -193,6 +193,7 @@ def start():
     for folder in cache_folders:
         folder_files = os.listdir(f"{cache_folder_path}\\{folder}")
         print(folder_files)
+        print()
 
 
 

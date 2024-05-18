@@ -287,9 +287,9 @@ def main():
             elif argument.lower().startswith("s"):
                 starting_args = argument.split("-")
                 # print(starting_args)
-                if starting_args[0] == "s" or starting_args[0] == "start":
+                if starting_args[0].lower() == "s" or starting_args[0].lower() == "start":
                     if starting_args not in commands:
-                        commands.append(starting_args)
+                        commands.append(starting_args[1:])
                 else:
                     print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:

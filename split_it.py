@@ -92,57 +92,61 @@ def update_check(url):
                     print("A new version is available. Do you want to download it?")
                     print("You if you want to use the latest version, you need to start it from the downloaded version though.")
                     print("It creates a folder called latest_build and stores the zip there.")
-                    choice = input("press y to download and n to cancel:\n=>").strip()
-
-                    if choice.lower() == "y":
-                        # Download the latest build
-                        assets = latest_release.get('assets', [])
-
-                        if assets:
-                            # Create a folder to store the downloaded files
-                            download_folder = "latest_build"
-                            os.makedirs(download_folder, exist_ok=True)
-
-                            for asset in assets:
-                                download_url = asset.get('browser_download_url')
-                                download_response = requests.get(download_url)
-
-                                if download_response.status_code == 200:
-                                    # Save the file
-                                    file_path = os.path.join(download_folder, asset.get('name'))
-                                    with open(file_path, 'wb') as file:
-                                        file.write(download_response.content)
-                                    print(f"Downloaded: {asset.get('name')}")
-                                    break
-
-                                #There has been an issue downloading
-                                else:
-                                    print(f"Failed to download: {asset.get('name')}")
-                                    break
-
-                            #Downloading is done 👍
-                            print(f"All assets from the latest release have been downloaded to '{download_folder}'.")
-                            break
-
-                        #no assets found
-                        else:
-                            print("No assets found in the latest release.")
-                            break
-
-                    #Skipped the download
-                    elif choice.lower() == "n":
+                    try:
+                        choice = input("press y to download and n to cancel:\n=>").strip()
+                    except (EOFError, KeyboardInterrupt):
                         print("Skipping download.")
                         break
-
-                    #Clearing the screen.
-                    elif choice.lower() in ["cls", "clear"]:
-                        cls_()
-                        continue
-
-                    #Choice was invalid...
                     else:
-                        print("Invalid choice. Please enter 'yes' or 'no'.")
-                        continue
+                        if choice.lower() == "y":
+                            # Download the latest build
+                            assets = latest_release.get('assets', [])
+
+                            if assets:
+                                # Create a folder to store the downloaded files
+                                download_folder = "latest_build"
+                                os.makedirs(download_folder, exist_ok=True)
+
+                                for asset in assets:
+                                    download_url = asset.get('browser_download_url')
+                                    download_response = requests.get(download_url)
+
+                                    if download_response.status_code == 200:
+                                        # Save the file
+                                        file_path = os.path.join(download_folder, asset.get('name'))
+                                        with open(file_path, 'wb') as file:
+                                            file.write(download_response.content)
+                                        print(f"Downloaded: {asset.get('name')}")
+                                        break
+
+                                    #There has been an issue downloading
+                                    else:
+                                        print(f"Failed to download: {asset.get('name')}")
+                                        break
+
+                                #Downloading is done 👍
+                                print(f"All assets from the latest release have been downloaded to '{download_folder}'.")
+                                break
+
+                            #no assets found
+                            else:
+                                print("No assets found in the latest release.")
+                                break
+
+                        #Skipped the download
+                        elif choice.lower() == "n":
+                            print("Skipping download.")
+                            break
+
+                        #Clearing the screen.
+                        elif choice.lower() in ["cls", "clear"]:
+                            cls_()
+                            continue
+
+                        #Choice was invalid...
+                        else:
+                            print("Invalid choice. Please enter 'yes' or 'no'.")
+                            continue
         else:
             print("Failed to retrieve the latest version from GitHub. Please check your internet connection and try again.")
             input("press enter to go back to the main menu.").strip()

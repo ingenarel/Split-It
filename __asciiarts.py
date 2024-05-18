@@ -277,6 +277,18 @@ ________________________________________________________________________________
     # also anyone that contributes can add their details here
 
 def __four_hundred_status_code():
+    """
+    Usage:\n
+    print(credits())
+
+    Description:\n
+    This is the credits. it returns the it as a string.
+    I used raw strings so that it's more readable in the editor.
+
+    if someone edits this, be sure to remember to don't leave any trailing whitespaces.
+    because that will render the whitespaces too and if the terminal size is small, the text will overlap,
+    so it will mess up the rendering.
+    """
     return"""
 ERROR 400: bad request.
 

@@ -1,5 +1,5 @@
 try:
-    from __asciiarts import __grettings, __end, __helpsite, __credits, __four_hundred_status_code
+    from __asciiarts import __grettings, __end, __helpsite, __credits
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
 import os, sys, requests
@@ -42,7 +42,13 @@ def update_check(url):
             latest_version = latest_release.get('tag_name')
         else:
             if response.status_code == 400:
-                print(__four_hundred_status_code)
+                print("")
+                print("ERROR 400: bad request.")
+                print("")
+                print("his status code indicates that there's something off with the request you sent to the server.")
+                print("t's like filling out a form incorrectly or forgetting to provide essential details.")
+                print("he server couldn't understand or process your request due to missing or malformed data.")
+                print("")
 
             elif response.status_code == 401:
                 print("")

@@ -180,8 +180,13 @@ def asking():
             exit(__end())
 
 def start():
-    test = filedialog.askdirectory()
-    print(test)
+    while True:
+        test = filedialog.askdirectory()
+        if test != "":
+            print("File selection was c")
+            break
+    print(f"\"{test}\"")
+
 
 def main():
     if len(sys.argv) == 1:

@@ -197,8 +197,8 @@ def start():
         print(folder_files)
         print(number_of_files)
         print()
-        if number_of_files != 0:
-            set.add(number_of_files)
+        if number_of_files > 0:
+            set.add(str(number_of_files))
     print(x)
 
 

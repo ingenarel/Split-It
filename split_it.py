@@ -211,8 +211,9 @@ def start():
         # print(number_of_files)
         # print()
         for file in folder_files:
-            # print(file)
-            print(sys.getsizeof(file))
+            print(file, end=" =>")
+            print(os.stat(file))
+
         if number_of_files > 0:
             x.add(number_of_files)
     print(len(x))

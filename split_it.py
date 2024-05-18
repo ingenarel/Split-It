@@ -63,8 +63,8 @@ def main():
         for argument in sys.argv:
             commands.add(argument)
         for command in commands:
-            if command == "license":
-                read_license()
+            if command in ["license", "l"]:
+                print(read_license())
 
 if __name__ == "__main__":
     main()

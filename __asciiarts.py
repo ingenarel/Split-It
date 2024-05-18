@@ -73,7 +73,7 @@ def end():
     print(end())
 
     Description:\n
-    This greets the user. it returns the greeting as a string.
+    This is the program outro. it returns the goodbye as a string.
     I used raw strings so that it's more readable in the editor.
 
     if someone edits this, be sure to remember to don't leave any trailing whitespaces.

@@ -276,6 +276,15 @@ ________________________________________________________________________________
     # chaos you can add your other details here if you want
     # also anyone that contributes can add their details here
 
+def four_hundred_status_code():
+    return"""
+                print("")
+                print("ERROR 400: bad request.")
+                print("")
+                print("his status code indicates that there's something off with the request you sent to the server.")
+                print("t's like filling out a form incorrectly or forgetting to provide essential details.")
+                print("the server couldn't understand or process your request due to missing or malformed data.")
+    """
 
 if __name__ == "__main__":
     print(f"executing greetings():\n{grettings()}")

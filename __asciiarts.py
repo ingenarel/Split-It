@@ -276,10 +276,86 @@ ________________________________________________________________________________
     # chaos you can add your other details here if you want
     # also anyone that contributes can add their details here
 
+def __HTTP_statues_codes_error(code):
+    if code == 400:
+        return """
+ERROR 400: bad request.
 
+his status code indicates that there's something off with the request you sent to the server.
+t's like filling out a form incorrectly or forgetting to provide essential details.
+he server couldn't understand or process your request due to missing or malformed data.
+        """
+    elif code == 401:
+        return """
+ERROR 401: Unauthorized
+
+This status code means you're not allowed to access the requested resource without proper authentication.
+It's like trying to enter a restricted area without showing your ID.
+You need to provide valid credentials, such as a username and password or an authentication token, to gain access.
+"""
+    elif code == 403:
+        return """
+ERROR 403: Forbidden.
+
+You're being denied access, plain and simple.
+Even with valid credentials, you're not allowed to access the resource because you lack the necessary permissions.
+It's like trying to enter a building without the proper authorization or access card.
+You need to request permission from the appropriate authorities.
+    """
+    elif code == 404:
+        return """
+ERROR 404: File not found.
+
+This status code indicates that the server couldn't find the resource you requested.
+It's like looking for a book on a library shelf only to discover it's not there.
+The resource may have been moved, deleted, or simply never existed.
+Double-check the URL or try searching for the resource in a different location.
+    """
+    elif code == 422:
+        return """
+ERROR 422: Unprocessable Entity.
+
+Ah, it seems there's a problem with the data you provided.
+This status code typically occurs when the server understands your request but can't process it due to invalid data.
+It's like trying to fill out a form with incorrect or incomplete information.
+Review the data you submitted and ensure it meets the server's requirements.
+    """
+    elif code == 429:
+        return """
+ERROR 429: Too Many Requests.
+
+Slow down there! You've been making too many requests to the server within a short period.
+This status code indicates that you've hit a rate limit, and the server is asking you to ease up for a bit.
+It's like trying to take too many slices of cake at once, and someone politely suggests you wait your turn.
+    """
+    elif code == 500:
+        return """
+ERROR 500: Server Side Error.
+
+Uh-oh, something went wrong on the server's end, and it's not your fault.
+This status code indicates an unexpected problem occurred while the server was trying to process your request.
+It's like ordering food at a restaurant and having the kitchen catch fire.
+The server is apologizing for the inconvenience and asking for your patience while they sort things out.
+    """
+    elif code == 503:
+        return """
+ERROR 503: Server was not ready
+
+Hold your horses! The server is currently unavailable to handle your request.
+This status code typically occurs due to maintenance or overload.
+It's like calling a store outside of business hours and getting a message saying they're closed for the day.
+You'll need to try again later when the server is back up and running.
+    """
+    else:
+        return f"ERROR UNKNOWN:\n\nI Don't know what the fuck are you doing but i don't have the response for ERROR:{code}\n"
 
 if __name__ == "__main__":
     print(f"executing greetings():\n{__grettings()}")
     print(f"executing end():\n{__end()}")
     print(f"executing helpsite():\n{__helpsite()}")
     print(f"executing credits:\n{__credits()}")
+    print("executing __HTTP_statues_codes_error():")
+    codes = (400, 401, 403, 404, 422, 429, 500, 503, 000)
+    for stuff in codes:
+        print(__HTTP_statues_codes_error(stuff))
+

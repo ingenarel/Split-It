@@ -3,7 +3,8 @@ def grettings():
     This greets the user. it returns the greeting as a string.
     I used raw strings so that it's more readable in the editor.
     if someone edits this, be sure to remember to don't leave any trailing whitespaces.
-    because that will mess up the rendering on the terminal if the terminal size is small.
+    because that will render the whitespaces too and if the terminal size is small, the text will overlap,
+    so it will mess up the rendering.
     """
     return r"""
  ________       ________    ___           ___      __________               ___      __________   ___
@@ -39,7 +40,7 @@ ________________________________________________________________________________
 |: ╚═════╝ ╚═╝╚══════╝ ╚═════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝╚═╝                                                                                         :|
 |:                                                                                                                                                                            :|
 |: THIS WILL ONLY WORK FOR FLUID AND SMOKE CACHES ONLY! (As far as I know.. Haven't tested with others yet....)                                                               :|
-|: This is because I only know how fluid cache files works and i haven't really worked it other simulations yet such as smoke and fire, particle systems...                   :|
+|: This is because I only know how fluid cache files works and another sheepit user used it for their and i haven't really worked it other simulations yet such as smoke and fire, particle systems...                   :|
 |: I'll eventually learn them too and then i'll try to upgrade it!                                                                                                            :|
 |: I'll also try to make a smart cache splitter where it will split the files based on their sizes.                                                                           :|
 |: But for now you will have to set how many splits you want to make.                                                                                                         :|

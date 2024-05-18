@@ -285,8 +285,10 @@ def main():
             elif argument.startswith("s"):
                 starting_args = argument.split("-")
                 print(starting_args)
-                if starting_args[0] == "s":
+                if starting_args[0] == "s" or starting_args == "start":
                     print("yes")
+                else:
+                    print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
 

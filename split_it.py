@@ -295,7 +295,7 @@ def main():
                     print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
-        print(commands)
+        # print(commands)
         for command in commands:
             # print(type(command))
             if command == "license":

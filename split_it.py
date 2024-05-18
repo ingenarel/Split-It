@@ -288,13 +288,14 @@ def main():
             elif argument.startswith("s"):
                 starting_args = argument.split("-")
                 # print(starting_args)
-                if starting_args[0] == "s" or starting_args[0] == "start":
-                    commands.append(argument)
+                if starting_args not in commands:
+                    if starting_args[0] == "s" or starting_args[0] == "start":
+                        commands.append(argument)
                 else:
                     print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
-
+        print(commands)
         for command in commands:
             if command == "license":
                 print(read_license())

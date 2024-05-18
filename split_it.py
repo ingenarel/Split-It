@@ -213,7 +213,6 @@ def start():
         else:
             break
     # print(f"\"{blend_file_path}\"")
-    blend_file_size = genericpath.getsize(blend_file_path)
     # print(blend_file_size)
     cache_folders = os.listdir(cache_folder_path)
     # print(cache_folders)
@@ -262,7 +261,9 @@ Do you want to continue? press y to to continue and n to cancel
 
     # added_size = 0
     # while added_size < 2_000_000_000: #this is 2 gigs
-    for
+
+def __file__spliter__(files_in_dict, blend_file):
+    ...
 
 def main():
     if len(sys.argv) == 1:

@@ -199,7 +199,10 @@ def start():
         print()
         if number_of_files > 0:
             x.add(number_of_files)
-    if len(x) < 1:
+    print(len(x))
+    if len(x) == 0:
+        exit("All the folders in the cache folder is empty. Please check again.")
+    if len(x) > 1:
         print("you have a folder that contains more or less files than the other folders. this issue isn't caused by any empty folders.")
     print(x)
 

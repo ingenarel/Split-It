@@ -34,7 +34,7 @@ def asking():
                 cls_()
                 print(grettings())
             elif i in ["esc", "exit", "close"]:
-                exit()
+                exit("")
             elif i in ["license", "l"]:
                 return "license"
             elif i in ["credits", "c"]:

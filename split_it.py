@@ -4,6 +4,12 @@ except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
 import os, sys
 
+class Variables:
+    local_version="v1.2"
+    title=f"Split It! version {local_version}"
+    repo_owner = "ingenarel"
+    repo_name = "Split-It"
+
 def cls_():
     """
     usage:\n

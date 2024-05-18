@@ -61,10 +61,12 @@ def main():
     elif len(sys.argv) > 1:
         commands = set()
         for argument in sys.argv:
-            commands.add(argument)
+            if argument in ["license", "l"]:
+                commands.add("license")
         for command in commands:
-            if command in ["license", "l"]:
+            if command == "license":
                 print(read_license())
+            # elif command in []
 
 if __name__ == "__main__":
     main()

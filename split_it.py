@@ -277,16 +277,18 @@ def main():
         for argument in sys.argv[1:]:
             argument = argument.lower()
             if argument in ["license", "l"]:
-                commands.add("license")
+                if "license" not in commands:
+                    commands.append("license")
             elif argument in ["help", "h"]:
-                commands.add("help")
+                if "help" not in commands:
+                    commands.append("help")
             elif argument in ["credits", "c"]:
-                commands.add("credits")
+                commands.append("credits")
             elif argument.startswith("s"):
                 starting_args = argument.split("-")
                 # print(starting_args)
                 if starting_args[0] == "s" or starting_args[0] == "start":
-                    commands.add(argument)
+                    commands.append(argument)
                 else:
                     print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:

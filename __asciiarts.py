@@ -167,11 +167,11 @@ ________________________________________________________________________________
 |:=============$============$=======================================================================================================================:|
 |:             |            |   It checks your version. then displayes your current version and the latest version. If the current version is the   :|
 |:             |            |  is updated than the latest stable built release, the says that you're using a version that is newer than the latest  :|
-|:     ver     |   version  |   stable build. And if the current version is older than the latest version, it says that there is a newer version    :|
+|:     ver     | version,v  |   stable build. And if the current version is older than the latest version, it says that there is a newer version    :|
 |:             |            |                 available. If the version is the same as the latest version, it just tells you that.                  :|
 |:             |            |                                           Should work only on the main menu.                                          :|
 |:=============$============$=======================================================================================================================:|
-|:    cls      |   clear    |                            Clears the screen. Works anywhere where you can put an input.                              :|
+|:    cls      |   clear,c  |                            Clears the screen. Works anywhere where you can put an input.                              :|
 |:=============$============$=======================================================================================================================:|
 |:    exit     | esc, close |      Exits the program. Should work only on the main menu. You can also use ctrl-z or ctrl-c to exit the program      :|
 |:=============$============$=======================================================================================================================:|

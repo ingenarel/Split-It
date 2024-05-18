@@ -154,11 +154,11 @@ def asking():
             i = input("What do you want to do?\n=> ").strip().lower()
             if i in ["s", "start"]:
                 break
-            elif i in ["ver", "version"]:
+            elif i in ["ver", "version", "v"]:
                 update_check(f"https://api.github.com/repos/{Variables.repo_owner}/{Variables.repo_name}/releases/latest")
-            elif i in ["cls", "clear"]:
+            elif i in ["cls", "clear", "c"]:
                 cls_()
-            elif i in ["esc", "exit", "close"]:
+            elif i in ["esc", "exit", "close", "end", "e"]:
                 exit(__end())
             elif i in ["license", "l"]:
                 print(read_license())

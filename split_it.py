@@ -297,15 +297,15 @@ def main():
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
         print(commands)
         for command in commands:
-            print(type(command))
+            # print(type(command))
             if command == "license":
                 print(read_license())
             elif command == "help":
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
-            elif type(command) == "list":
-                print("start should be working now")
+            elif type(command) == list:
+                print(command)
 
         # exit(__end())
 

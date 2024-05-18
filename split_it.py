@@ -206,7 +206,6 @@ def start():
         print("you have a folder that contains more or less files than the other folders. this issue isn't caused by any empty folders.")
     print(x)
 
-
 def main():
     if len(sys.argv) == 1:
         print(__grettings())

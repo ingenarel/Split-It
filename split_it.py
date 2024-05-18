@@ -292,7 +292,7 @@ def main():
                 # print(starting_args)
                 if starting_args[0].lower() == "s" or starting_args[0].lower() == "start":
                     if starting_args not in commands:
-                        commands.append(starting_args[1:])
+                        starting_commands = set()
                 else:
                     print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:

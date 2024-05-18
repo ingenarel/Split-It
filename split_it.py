@@ -273,7 +273,7 @@ def main():
         asking()
         exit(__end())
     elif len(sys.argv) > 1:
-        commands = set()
+        commands = []
         for argument in sys.argv[1:]:
             argument = argument.lower()
             if argument in ["license", "l"]:

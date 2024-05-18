@@ -282,7 +282,7 @@ def main():
                 commands.add("help")
             elif argument in ["credits", "c"]:
                 commands.add("credits")
-            elif re.search(argument, r"^(?:s|ff)$"):
+            elif re.search(argument, r"^(?:s|fff)$"):
                 commands.add(argument)
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")

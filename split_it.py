@@ -34,7 +34,7 @@ def asking():
                 cls_()
                 print(grettings())
             elif i in ["esc", "exit", "close"]:
-                print(end())
+                exit(end())
             elif i in ["license", "l"]:
                 return "license"
             elif i in ["credits", "c"]:
@@ -46,7 +46,7 @@ def asking():
                 print("Invalid input.")
                 print("")
         except EOFError:
-            print(end())
+            exit(end())
 
 def main():
     print(grettings())

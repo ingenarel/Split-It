@@ -147,3 +147,4 @@ if you liked this, please star the repo in github!
 """
 if __name__ == "__main__":
     print(f"executing greetings():\n{grettings()}")
+    print(f"executing end():\n{end()}")

@@ -164,17 +164,17 @@ ________________________________________________________________________________
 |:‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾:|
 |:   COMMAND   | ALSO KNOWN |                                                     DESCRIPTION                                                       :|
 |:    NAME     |     AS     |                                                                                                                       :|
-|:=============|============|=======================================================================================================================:|
+|:=============+============+=======================================================================================================================:|
 |:             |            |   It checks your version. then displayes your current version and the latest version. If the current version is the   :|
 |:             |            |  is updated than the latest stable built release, the says that you're using a version that is newer than the latest  :|
 |:     ver     |   version  |   stable build. And if the current version is older than the latest version, it says that there is a newer version    :|
 |:             |            |                 available. If the version is the same as the latest version, it just tells you that.                  :|
 |:             |            |                                           Should work only on the main menu.                                          :|
-|:=============|============|=======================================================================================================================:|
+|:=============+============+=======================================================================================================================:|
 |:    cls      |   clear    |                            Clears the screen. Works anywhere where you can put an input.                              :|
-|:=============|============|=======================================================================================================================:|
+|:=============+============+=======================================================================================================================:|
 |:    exit     | esc, close |      Exits the program. Should work only on the main menu. You can also use ctrl-z or ctrl-c to exit the program      :|
-|:=============|============|=======================================================================================================================:|
+|:=============+============+=======================================================================================================================:|
 |:             |            |    At first it goes to your cache folder. Then it takes the first x ammount files from the config file. x is you,     :|
 |:             |            |   setting how much files it will take per folder. it could be 1/2/3 basically anything. Only an integer tho lol. It   :|
 |:             |            |   pastes those files in a different folder. It will first create a folder called Destination. It will store all the   :|
@@ -225,7 +225,7 @@ ________________________________________________________________________________
 |:             |            |  happened. You can choose to delete them. If you wish to do so, it will delete those 1, 2, 3 folders. Deleting those  :|
 |:             |            |   folders won't matter because you'll still have the zips.This functions was created so that you don't waste extra    :|
 |:             |            |                                          space. Should work only on the main menu.                                    :|
-|:=============|============|=======================================================================================================================:|
+|:=============+============+=======================================================================================================================:|
 |:   license   |      l     |                                   Shows the licnese. Should work only on the main menu.                               :|
 |:_____________|____________|_______________________________________________________________________________________________________________________:|
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾

@@ -234,6 +234,18 @@ ________________________________________________________________________________
     # |::| - this is for the devs so that we can copy paste it every time we need to expand the box
 
 def credits():
+    """
+    Usage:\n
+    print(credits())
+
+    Description:\n
+    This is the credits. it returns the it as a string.
+    I used raw strings so that it's more readable in the editor.
+
+    if someone edits this, be sure to remember to don't leave any trailing whitespaces.
+    because that will render the whitespaces too and if the terminal size is small, the text will overlap,
+    so it will mess up the rendering.
+    """
     return """
 ______________________________________________________________________________________________________________________________________________________________________
 |:‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾:|

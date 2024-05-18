@@ -212,7 +212,7 @@ def start():
         # print()
         for file in folder_files:
             print(file, end=" =>")
-            print(os.stat(file))
+            print(os.stat(f"{cache_folder_path}\\{folder}\\{file}"))
 
         if number_of_files > 0:
             x.add(number_of_files)

@@ -2,7 +2,7 @@ try:
     from __asciiarts import __grettings, __end, __helpsite, __credits, __HTTP_statues_codes_error
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
-import os, sys, requests, subprocess, genericpath
+import os, sys, requests, subprocess, genericpath, re
 try:
     from tqdm import tqdm
 except ModuleNotFoundError:
@@ -282,7 +282,8 @@ def main():
                 commands.add("help")
             elif argument in ["credits", "c"]:
                 commands.add("credits")
-            elif argument.startswith(("s", "start")):
+            elif re.search(argument, r"^(s|start)$", re.IGNORECASE):
+                commands.add(argument)
                 print(argument)
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")

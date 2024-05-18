@@ -188,6 +188,7 @@ def start():
         else:
             break
     print(f"\"{cache_folder_path}\"")
+    os.listdir(cache_folder_path)
 
 
 

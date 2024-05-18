@@ -143,7 +143,7 @@ Please check your zip files before you upload your project.
 Because,
 even if something works for someone it might not work for others.
 I hope you have a great life.
-if you like this, please star the repo in github!
+if you liked this, please star the repo in github!
 """
 if __name__ == "__main__":
     print(f"executing greetings():\n{grettings()}")

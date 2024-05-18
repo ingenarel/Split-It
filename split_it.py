@@ -1,5 +1,5 @@
 try:
-    from __asciiarts import grettings
+    from __asciiarts import grettings, end
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
 from os import system as OSsystem
@@ -34,7 +34,7 @@ def asking():
                 cls_()
                 print(grettings())
             elif i in ["esc", "exit", "close"]:
-                exit("")
+                print(end())
             elif i in ["license", "l"]:
                 return "license"
             elif i in ["credits", "c"]:
@@ -46,7 +46,7 @@ def asking():
                 print("Invalid input.")
                 print("")
         except EOFError:
-            exit()
+            print(end())
 
 def main():
     print(grettings())

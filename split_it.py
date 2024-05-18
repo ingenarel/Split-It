@@ -200,6 +200,7 @@ def main():
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
+        exit(__end())
 
 
 if __name__ == "__main__":

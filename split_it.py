@@ -50,7 +50,7 @@ def asking():
                 print("")
                 print("Invalid input.")
                 print("")
-        except EOFError:
+        except (EOFError, KeyboardInterrupt):
             exit(end())
 
 def main():

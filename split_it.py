@@ -183,7 +183,10 @@ def start():
     while True:
         test = filedialog.askdirectory()
         if test == "":
-            print("Folder Selection was cancelled.")
+            print("Folder Selection was cancelled. Trying again...")
+            continue
+        else:
+            break
     print(f"\"{test}\"")
 
 

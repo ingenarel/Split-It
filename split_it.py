@@ -52,8 +52,8 @@ def cls_():
         os.system("cls")
         print(__grettings())
     elif os.name == "posix":
-        print(__grettings())
         os.system("clear")
+        print(__grettings())
     else:
         print("I didn't implement the command for this os sadly. please report this issue in the github repo")
 
@@ -203,8 +203,25 @@ def start():
     if len(x) == 0:
         exit("All the folders in the cache folder is empty. Please check again.")
     elif len(x) > 1:
-        print("you have a folder that contains more or less files than the other folders. this issue isn't caused by any empty folders.")
+        while True:
+            sim_cache_fuck_up = input("""
+you have a folder that contains more or less files than the other folders.
+This issue isn't caused by any empty folders.
+This will most certainly fuck up your shit.
+If you're confident that it won't, you're more than welcome to continue.
 
+Do you want to continue? press y to to continue and n to cancel
+=>""").strip().lower()
+            if sim_cache_fuck_up == "y":
+                break
+            elif sim_cache_fuck_up == "n":
+                exit(__end())
+            elif sim_cache_fuck_up in ["cls", "clear"]:
+                cls_()
+                continue
+            else:
+                print("Invalid input!")
+                continue
     print(x)
 
 def main():

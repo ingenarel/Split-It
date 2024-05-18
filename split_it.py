@@ -212,8 +212,8 @@ def start():
         # print()
         for file in folder_files:
             print(file, end=" =>")
-            # print(os.stat(f"{cache_folder_path}\\{folder}\\{file}"))
-            print(genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}"))
+            # print(os.stat(f"{cache_folder_path}\\{folder}\\{file}"))  # we need to use this if something gets fucked.
+            print(genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")) # altho the python modules said that not use this module directly... it works, and it's less of a hassle. imma keep using it.
             print()
 
         if number_of_files > 0:

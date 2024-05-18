@@ -61,7 +61,13 @@ def cls_():
         os.system("clear")
         print(__grettings())
     else:
-        print("I didn't implement the command for this os sadly. please report this issue in the github repo.")
+        print("""
+I didn't implement the command for this os sadly. please report this issue in the github repo.
+
+Or, if you know how, you can try to change the cls() function itself. visit the github page. the cls() function, that clears the screen, is in split_it.py.
+""")
+
+
 
 def read_license():
     try:

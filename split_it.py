@@ -20,7 +20,7 @@ def cls_():
         print(grettings())
         OSsystem("clear")
     else:
-        print("This os is not supported for this command")
+        print("I didn't implement the command for this os sadly. please report this issue in the github repo")
 
 def read_license():
     try:

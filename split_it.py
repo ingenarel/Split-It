@@ -181,13 +181,14 @@ def asking():
 
 def start():
     while True:
-        test = filedialog.askdirectory()
-        if test == "":
+        cache_folder_path = filedialog.askdirectory()
+        if cache_folder_path == "":
             print("Folder Selection was cancelled. Trying again...")
             continue
         else:
             break
-    print(f"\"{test}\"")
+    print(f"\"{cache_folder_path}\"")
+
 
 
 def main():

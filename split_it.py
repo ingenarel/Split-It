@@ -3,6 +3,8 @@ try:
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
 import os, sys, requests
+try:
+    from shitfuck import tqdm
 
 from tkinter import filedialog
 

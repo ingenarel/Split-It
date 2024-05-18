@@ -205,6 +205,7 @@ def start():
     cache_folders = os.listdir(cache_folder_path)
     # print(cache_folders)
     x =  set()           # a_set_to_check_there_are_more_or_less_files_in_a_folder
+    folders_and_their_files = {}
     for folder in cache_folders:
         folder_files = os.listdir(f"{cache_folder_path}\\{folder}")
         number_of_files = len(folder_files)
@@ -214,11 +215,13 @@ def start():
         # print()
         for file in folder_files:
             files_and_their_sizes[file] = genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")
-        print(files_and_their_sizes)
+        # print(files_and_their_sizes)
+        folders_and_their_files[folder] = files_and_their_sizes
 
         if number_of_files > 0:
             x.add(number_of_files)
     # print(len(x))
+    # print(x)
     if len(x) == 0:
         exit("All the folders in the cache folder is empty. Please check again.")
     elif len(x) > 1:
@@ -241,7 +244,6 @@ Do you want to continue? press y to to continue and n to cancel
             else:
                 print("Invalid input!")
                 continue
-    # print(x)
 
 def main():
     if len(sys.argv) == 1:

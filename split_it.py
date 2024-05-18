@@ -21,8 +21,9 @@ def cls_():
         print("This os is not supported for this command")
 
 def read_license():
-    with open("LICENSE", "r") as file:
-        return file.read()
+    try:
+        with open("LICENSE", "r") as file:
+            return f"\n\n\n{file.read()}\n\n"
 
 def asking():
     while True:

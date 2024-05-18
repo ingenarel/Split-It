@@ -282,11 +282,11 @@ def main():
                 commands.add("help")
             elif argument in ["credits", "c"]:
                 commands.add("credits")
-            elif re.fullmatch(argument, r""):
+            elif re.search(argument, r"(s|f)"):
                 commands.add(argument)
                 print(argument)
-            else:
-                print(f"\"{argument}\" isn't a valid command. skipping it.")
+            # else:
+            #     print(f"\"{argument}\" isn't a valid command. skipping it.")
 
         for command in commands:
             if command == "license":
@@ -295,8 +295,8 @@ def main():
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
-            else:
-                print(command)
+            # else:
+            #     print(command)
         # exit(__end())
 
 

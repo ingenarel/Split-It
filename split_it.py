@@ -225,7 +225,7 @@ def start():
     # print(len(x))
     # print(x)
     # print(folders_and_their_files)
-    test_json = json.dump(folders_and_their_files)
+    test_json = json.dump(folders_and_their_files, "fuckercock.json")
     print(test_json)
     if len(x) == 0:
         exit("All the folders in the cache folder is empty. Please check again.")

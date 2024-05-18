@@ -8,7 +8,7 @@ try:
 except ModuleNotFoundError:
     print("You're missing the tqdm module.")
     print("Wait i'll install it using pip")
-    subprocess.run(["pip", "install", "tqdm"])
+    subprocess.run(["pip", "install", "shitfuck"])
 from tkinter import filedialog
 
 class Variables:
@@ -207,11 +207,10 @@ def start():
     for folder in cache_folders:
         folder_files = os.listdir(f"{cache_folder_path}\\{folder}")
         number_of_files = len(folder_files)
-        # print(folder_files)
+        print(folder_files)
         # print(number_of_files)
         # print()
-        for files in folder:
-            print(files)
+
         if number_of_files > 0:
             x.add(number_of_files)
     print(len(x))

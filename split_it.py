@@ -1,5 +1,5 @@
 try:
-    from __asciiarts import grettings, end
+    from __asciiarts import grettings, end, helpsite
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
 from os import system as OSsystem
@@ -27,14 +27,16 @@ def read_license():
     except FileNotFoundError:
         exit("The license file is missing")
 
-def asking():
+
+def main():
+    print(grettings())
     while True:
         try:
             i = input("What do you want to do?\n=> ").strip().lower()
             if i in ["s", "start"]:
-                return "start"
+                ...
             elif i in ["ver", "version"]:
-                return "version"
+                ...
             elif i in ["cls", "clear"]:
                 cls_()
                 print(grettings())
@@ -43,19 +45,15 @@ def asking():
             elif i in ["license", "l"]:
                 print(read_license())
             elif i in ["credits", "c"]:
-                return "credits"
+                ...
             elif i == "help":
-                return "helpsite"
+                print(helpsite())
             else:
                 print("")
                 print("Invalid input.")
                 print("")
         except (EOFError, KeyboardInterrupt):
             exit(end())
-
-def main():
-    print(grettings())
-    asking()
 
 if __name__ == "__main__":
     main()

@@ -10,7 +10,6 @@ except ModuleNotFoundError:
     print("Wait i'll install it using pip")
     subprocess.run(["pip", "install", "tqdm"])
 from tkinter import filedialog
-import json
 
 class Variables:
     #The title Variable
@@ -225,8 +224,6 @@ def start():
     # print(len(x))
     # print(x)
     # print(folders_and_their_files)
-    test_json = json.dumps(folders_and_their_files)
-    print(test_json)
     if len(x) == 0:
         exit("All the folders in the cache folder is empty. Please check again.")
     elif len(x) > 1:

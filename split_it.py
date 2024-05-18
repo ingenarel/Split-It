@@ -194,7 +194,7 @@ def asking():
 
 def start():
     while True:
-        cache_folder_path = filedialog.askdirectory("Input a cache folder's name")
+        cache_folder_path = filedialog.askdirectory(title="Input a cache folder's name")
         if cache_folder_path == "":
             print("Folder Selection was cancelled. Trying again...")
             continue

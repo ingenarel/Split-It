@@ -75,6 +75,7 @@ def update_check(url):
         print("Failed to retrieve the latest version from GitHub.")
         print("Please check your internet connection.")
         print("")
+
     else:
         if latest_version:
             print(f"Current version: {Variables.local_version}.")

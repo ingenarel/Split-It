@@ -171,9 +171,10 @@ ________________________________________________________________________________
 |:             |            |                 available. If the version is the same as the latest version, it just tells you that.                  :|
 |:             |            |                                           Should work only on the main menu.                                          :|
 |:=============$============$=======================================================================================================================:|
-|:    cls      |   clear,c  |                            Clears the screen. Works anywhere where you can put an input.                              :|
+|:    cls      |    clear   |                            Clears the screen. Works anywhere where you can put an input.                              :|
 |:=============$============$=======================================================================================================================:|
 |:    exit     | esc, close |      Exits the program. Should work only on the main menu. You can also use ctrl-z or ctrl-c to exit the program      :|
+|:             |     ,e     |                                                                                                                       :|
 |:=============$============$=======================================================================================================================:|
 |:             |            |    At first it goes to your cache folder. Then it takes the first x ammount files from the config file. x is you,     :|
 |:             |            |   setting how much files it will take per folder. it could be 1/2/3 basically anything. Only an integer tho lol. It   :|
@@ -227,6 +228,7 @@ ________________________________________________________________________________
 |:             |            |                                          space. Should work only on the main menu.                                    :|
 |:=============$============$=======================================================================================================================:|
 |:    help     |     h      |                                                 Shows this helpsite.                                                  :|
+|::|
 |:=============$============$=======================================================================================================================:|
 |:   license   |      l     |                                   Shows the licnese. Should work only on the main menu.                               :|
 |:_____________|____________|_______________________________________________________________________________________________________________________:|

@@ -156,7 +156,7 @@ def asking():
                 break
             elif i in ["ver", "version", "v"]:
                 update_check(f"https://api.github.com/repos/{Variables.repo_owner}/{Variables.repo_name}/releases/latest")
-            elif i in ["cls", "clear", "c"]:
+            elif i in ["cls", "clear"]:
                 cls_()
             elif i in ["esc", "exit", "close", "end", "e"]:
                 exit(__end())

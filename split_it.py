@@ -171,7 +171,7 @@ def asking():
         try:
             i = input("What do you want to do?\n=> ").strip().lower()
             if i in ["s", "start"]:
-                start()
+                start(ask_for_blend_and_sim())
                 break
             elif i in ["ver", "version", "v"]:
                 update_check(f"https://api.github.com/repos/{Variables.repo_owner}/{Variables.repo_name}/releases/latest")

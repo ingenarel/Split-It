@@ -283,7 +283,8 @@ def main():
                 if "help" not in commands:
                     commands.append("help")
             elif argument in ["credits", "c"]:
-                commands.append("credits")
+                if "credits" not in commands:
+                    commands.append("credits")
             elif argument.startswith("s"):
                 starting_args = argument.split("-")
                 # print(starting_args)

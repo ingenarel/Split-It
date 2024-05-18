@@ -2,7 +2,7 @@ try:
     from __asciiarts import grettings, end, helpsite, credits
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
-import os, sys
+import os, sys, requests
 
 class Variables:
     local_version="v1.2"
@@ -36,11 +36,10 @@ def read_license():
 
 def update_check(url):
     try:
-        response=requests.get(url)
+        response = requests.get(url)
         if response.status_code == 200:
             latest_release = response.json()
             latest_version = latest_release.get('tag_name')
-
         else:
             if response.status_code == 400:
                 print("")
@@ -48,7 +47,7 @@ def update_check(url):
                 print("")
                 print("his status code indicates that there's something off with the request you sent to the server.")
                 print("t's like filling out a form incorrectly or forgetting to provide essential details.")
-                print("he server couldn't understand or process your request due to missing or malformed data.")
+                print("the server couldn't understand or process your request due to missing or malformed data.")
                 print("")
 
             elif response.status_code == 401:

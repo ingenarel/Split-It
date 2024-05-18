@@ -213,7 +213,7 @@ def main():
             elif command == "start":
                 start()
 
-        exit(__end())
+        # exit(__end())
 
 
 if __name__ == "__main__":

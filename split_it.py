@@ -60,9 +60,11 @@ def main():
         exit(end())
     elif len(sys.argv) > 1:
         commands = set()
-        for argument in sys.argv:
+        for argument in sys.argv[:1]:
             if argument in ["license", "l"]:
                 commands.add("license")
+            else:
+                print(f"\"{argument}\" isn't a valid command. skipping it.")
         for command in commands:
             if command == "license":
                 print(read_license())

@@ -202,7 +202,7 @@ def start():
             break
     print(f"\"{cache_folder_path}\"")
     cache_folders = os.listdir(cache_folder_path)
-    print(cache_folders)
+    # print(cache_folders)
     x =  set()           # a_set_to_check_there_are_more_or_less_files_in_a_folder
     for folder in cache_folders:
         folder_files = os.listdir(f"{cache_folder_path}\\{folder}")

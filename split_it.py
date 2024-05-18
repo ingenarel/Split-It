@@ -296,7 +296,7 @@ def main():
                         for starting_arg in starting_args[1:]:
                             if starting_arg not in starting_commands:
                                 starting_commands.append(starting_arg)
-                        if len(starting_commands) != 0:
+                        if len(starting_args) != 0:
                             commands.append(starting_commands)
 
                 else:

@@ -54,8 +54,9 @@ def asking():
             exit(end())
 
 def main():
-    print(grettings())
-    asking()
+    # print(grettings())
+    # asking()
+    read_license()
 
 if __name__ == "__main__":
     main()

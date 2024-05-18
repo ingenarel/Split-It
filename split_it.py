@@ -264,7 +264,8 @@ Do you want to continue? press y to to continue and n to cancel
 def __spliter__(files_in_dict, blend_file):
     # print(files_in_dict)
     for folders in files_in_dict:
-
+        for files_in_folders in files_in_dict[folders]:
+            print(files_in_folders)
 
 def main():
     if len(sys.argv) == 1:

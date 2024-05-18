@@ -222,6 +222,7 @@ def start():
             x.add(number_of_files)
     # print(len(x))
     # print(x)
+    print(folders_and_their_files)
     if len(x) == 0:
         exit("All the folders in the cache folder is empty. Please check again.")
     elif len(x) > 1:
@@ -244,7 +245,6 @@ Do you want to continue? press y to to continue and n to cancel
             else:
                 print("Invalid input!")
                 continue
-
 def main():
     if len(sys.argv) == 1:
         print(__grettings())

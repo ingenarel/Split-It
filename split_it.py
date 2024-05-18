@@ -217,7 +217,7 @@ def start():
             for file in folder_files:
                 files_and_their_sizes[file] = genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")
         # print(files_and_their_sizes)
-            folders_and_their_files[f"{folder}"] = files_and_their_sizes
+            folders_and_their_files[f"{cache_folder_path}\\{folder}"] = files_and_their_sizes
 
         if number_of_files > 0:
             x.add(number_of_files)

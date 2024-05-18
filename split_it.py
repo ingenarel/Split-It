@@ -282,8 +282,9 @@ def main():
                 commands.add("help")
             elif argument in ["credits", "c"]:
                 commands.add("credits")
-            elif re.match(argument, r"(s)"):
+            elif re.fullmatch(argument, r""):
                 commands.add(argument)
+                print(argument)
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
 

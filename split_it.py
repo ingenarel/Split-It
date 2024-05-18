@@ -281,10 +281,10 @@ def main():
             elif argument.lower() in ["help", "h"]:
                 if "help" not in commands:
                     commands.append("help")
-            elif argument in ["credits", "c"]:
+            elif argument.lower() in ["credits", "c"]:
                 if "credits" not in commands:
                     commands.append("credits")
-            elif argument.startswith("s"):
+            elif argument.lower().startswith("s"):
                 starting_args = argument.split("-")
                 # print(starting_args)
                 if starting_args[0] == "s" or starting_args[0] == "start":

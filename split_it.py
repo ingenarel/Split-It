@@ -275,11 +275,10 @@ def main():
     elif len(sys.argv) > 1:
         commands = []
         for argument in sys.argv[1:]:
-            argument = argument.lower()
-            if argument in ["license", "l"]:
+            if argument.lower() in ["license", "l"]:
                 if "license" not in commands:
                     commands.append("license")
-            elif argument in ["help", "h"]:
+            elif argument.lower() in ["help", "h"]:
                 if "help" not in commands:
                     commands.append("help")
             elif argument in ["credits", "c"]:

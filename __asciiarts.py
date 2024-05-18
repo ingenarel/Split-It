@@ -145,6 +145,82 @@ even if something works for someone it might not work for others.
 I hope you have a great life.
 if you liked this, please star the repo in github!
 """
+
+def helpsite():
+    return r"""
+______________________________________________________________________________________________________________________________________________________
+|:‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾:|
+|:   COMMAND   | ALSO KNOWN |                                                     DESCRIPTION                                                       :|
+|:    NAME     |     AS     |                                                                                                                       :|
+|:=============|============|=======================================================================================================================:|
+|:             |            |   It checks your version. then displayes your current version and the latest version. If the current version is the   :|
+|:             |            |  is updated than the latest stable built release, the says that you're using a version that is newer than the latest  :|
+|:     ver     |   version  |   stable build. And if the current version is older than the latest version, it says that there is a newer version    :|
+|:             |            |                 available. If the version is the same as the latest version, it just tells you that.                  :|
+|:             |            |                                           Should work only on the main menu.                                          :|
+|:=============|============|=======================================================================================================================:|
+|:    cls      |   clear    |                            Clears the screen. Works anywhere where you can put an input.                              :|
+|:=============|============|=======================================================================================================================:|
+|:    exit     | esc, close |                                   Exits the program. Should work only on the main menu.                               :|
+|:=============|============|=======================================================================================================================:|
+|:             |            |    At first it goes to your cache folder. Then it takes the first x ammount files from the config file. x is you,     :|
+|:             |            |   setting how much files it will take per folder. it could be 1/2/3 basically anything. Only an integer tho lol. It   :|
+|:             |            |   pastes those files in a different folder. It will first create a folder called Destination. It will store all the   :|
+|:             |            |  files and folders that are split. Then it creates another folder inside it that's the same name as your simulation   :|
+|:             |            |     cache folder. And then create another folder called config inside it and then paste those files in the config     :|
+|:             |            |                                   folder. To show it visually it's doing this...                                      :|
+|:             |            |                                                                                                                       :|
+|:             |            |                                         Destination                                                                   :|
+|:             |            |                                           -> 1                                                                        :|
+|:             |            |                                             ->simulation folder name                                                  :|
+|:             |            |                                               ->config                                                                :|
+|:             |            |                                                 ->the first x amount of files                                         :|
+|:             |            |                                                                                                                       :|
+|:             |            |   The next step is doing the same thing for all those files. Creates folders called 1, 2, 3 etc basically an unique   :|
+|:             |            |                            folder for each x amount of files so now it looks like this...                             :|
+|:             |            |                                                                                                                       :|
+|:             |            |                                        Destination                                                                    :|
+|:             |            |                                          -> 1                                                                         :|
+|:             |            |                                            -> simulation folder name                                                  :|
+|:             |            |                                              -> config                                                                :|
+|:             |            |                                                -> the first x amount of files                                         :|
+|:             |            |                                          -> 2                                                                         :|
+|:             |            |                                            -> simulation folder name                                                  :|
+|:             |            |                                              -> config                                                                :|
+|:      s      |    start   |                                                -> the second x amount of files                                        :|
+|:             |            |                                                                                                                       :|
+|:             |            |   Then it does the same thing for the data and mesh folder in your simulation directory. then it asks questions it    :|
+|:             |            |       would do with the guiding, noise, and particles folder. either split them too if they have files in them        :|
+|:             |            |    (which i personally didn't have on my projects) or just create those folders that are named guiding, noise, and    :|
+|:             |            |  particles in the split cache directory so it works properly. then it copy pastes your blend file in each sub folder  :|
+|:             |            |                                       in the destination folder. that means...                                        :|
+|:             |            |                                                                                                                       :|
+|:             |            |                                        Destination                                                                    :|
+|:             |            |                                          -> 1                                                                         :|
+|:             |            |                                            -> your blend file                                                         :|
+|:             |            |                                            -> simulation folder name                                                  :|
+|:             |            |                                              -> config                                                                :|
+|:             |            |                                                -> the first x amount of files                                         :|
+|:             |            |                                                                                                                       :|
+|:             |            |                                          -> 2                                                                         :|
+|:             |            |                                            -> your blend file                                                         :|
+|:             |            |                                            -> simulation folder name                                                  :|
+|:             |            |                                              -> config                                                                :|
+|:             |            |                                                -> the second x amount of files                                        :|
+|:             |            |                                                                                                                       :|
+|:             |            |  etc etc then it creates a zip for the 1 folder. then the 2 folder. so on and so on the zip files are created in the  :|
+|:             |            |     Destination folder Then it asks you if it shoudld delete the subfolders that were created while the spliiting     :|
+|:             |            |  happened. You can choose to delete them. If you wish to do so, it will delete those 1, 2, 3 folders. Deleting those  :|
+|:             |            |   folders won't matter because you'll still have the zips.This functions was created so that you don't waste extra    :|
+|:             |            |                                          space. Should work only on the main menu.                                    :|
+|:=============|============|=======================================================================================================================:|
+|:  license, l |            |                                   Shows the licnese. Should work only on the main menu.                               :|
+|:_____________|____________|_______________________________________________________________________________________________________________________:|
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+"""
+
+    # |::| - this is for the devs so that we can copy paste it every time we need to expand the box
+
 if __name__ == "__main__":
     print(f"executing greetings():\n{grettings()}")
     print(f"executing end():\n{end()}")

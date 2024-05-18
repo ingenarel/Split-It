@@ -1,4 +1,5 @@
-from artddsfdsf import grettings
+try:
+    from __asciiarts import grettings
 from os import system as OSsystem
 from os import name as OSname
 

@@ -279,10 +279,10 @@ ________________________________________________________________________________
 def __four_hundred_status_code():
     """
     Usage:\n
-    print(__credits())
+    print(__four_hundred_status_code())
 
     Description:\n
-    This is the credits. it returns the it as a string.
+    This is the four_hundred_status_code. it returns the it as a string.
     I used raw strings so that it's more readable in the editor.
 
     if someone edits this, be sure to remember to don't leave any trailing whitespaces.

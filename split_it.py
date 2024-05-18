@@ -214,6 +214,7 @@ def start():
             break
     # print(f"\"{blend_file_path}\"")
     blend_file_size = genericpath.getsize(blend_file_path)
+    print(blend_file_size)
     cache_folders = os.listdir(cache_folder_path)
     # print(cache_folders)
     x =  set()           # a_set_to_check_there_are_more_or_less_files_in_a_folder

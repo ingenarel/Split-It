@@ -44,7 +44,7 @@ def asking():
                 print(read_license())
             elif i in ["credits", "c"]:
                 print(credits())
-            elif i == "help":
+            elif i in ["help", "h"]:
                 print(helpsite())
             else:
                 print("")

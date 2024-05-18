@@ -286,7 +286,7 @@ def main():
                 starting_args = argument.split("-")
                 # print(starting_args)
                 if starting_args[0] == "s" or starting_args[0] == "start":
-                    commands.add([starting_args])
+                    commands.add(argument)
                 else:
                     print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:
@@ -299,8 +299,9 @@ def main():
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
-            elif type(command) == "list":
-                print("start should work")
+            elif command.startswith("s"):
+                print(command)
+                print("start should be working")
 
         # exit(__end())
 

@@ -208,21 +208,17 @@ def start():
     for folder in cache_folders:
         folder_files = os.listdir(f"{cache_folder_path}\\{folder}")
         number_of_files = len(folder_files)
+        files_and_their_sizes = {}
         # print(folder_files)
         # print(number_of_files)
         # print()
-        files_and_their_sizes = {}
         for file in folder_files:
-            # print(file, end=" =>")
-            # print(os.stat(f"{cache_folder_path}\\{folder}\\{file}"))  # we need to use this if something gets fucked.
-            # print(genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")) # altho the python modules said that not use this module directly... it works, and it's less of a hassle. imma keep using it.
-            # print()
             files_and_their_sizes[file] = genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")
         print(files_and_their_sizes)
 
         if number_of_files > 0:
             x.add(number_of_files)
-    print(len(x))
+    # print(len(x))
     if len(x) == 0:
         exit("All the folders in the cache folder is empty. Please check again.")
     elif len(x) > 1:
@@ -245,7 +241,7 @@ Do you want to continue? press y to to continue and n to cancel
             else:
                 print("Invalid input!")
                 continue
-    print(x)
+    # print(x)
 
 def main():
     if len(sys.argv) == 1:

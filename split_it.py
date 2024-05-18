@@ -24,6 +24,8 @@ def read_license():
     try:
         with open("LICENSE", "r") as file:
             return f"\n\n\n{file.read()}\n\n"
+    except FileNotFoundError:
+        exit("The license file is missing")
 
 def asking():
     while True:

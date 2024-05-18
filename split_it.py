@@ -31,11 +31,13 @@ def asking():
 
         elif i in ["cls", "clear"]:
             cls_()
+            print(grettings())
+
         # elif i in ["esc", "exit", "close"]:
         #     exit()
 
         # elif i == "license":
-        #     license()
+
 
         # elif i in ["credits", "c"]:
         #     credits()

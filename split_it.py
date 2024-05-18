@@ -1,7 +1,7 @@
 from grettings import grettings
 
 def main():
-    print()
+    print(grettings())
 
 if __name__ == "__main__":
     main()

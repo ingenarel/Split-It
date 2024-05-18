@@ -1,7 +1,12 @@
 def grettings():
     """
+    Usage:\n
+    print(greetings())
+
+    Description:\n
     This greets the user. it returns the greeting as a string.
     I used raw strings so that it's more readable in the editor.
+
     if someone edits this, be sure to remember to don't leave any trailing whitespaces.
     because that will render the whitespaces too and if the terminal size is small, the text will overlap,
     so it will mess up the rendering.
@@ -55,6 +60,7 @@ For the best visual experience, please Maximise the Terminal/Command Prompt. And
 BEFORE YOU START THIS MAKE SURE THAT YOU HAVE DOUBLE THE EMPTY SPACE IN YOUR DRIVE AS YOUR BLEND AND CACHE FILE COMBINED!
 THAT MEANS IF YOUR BLEND FILE IS 100 mb AND YOUR SIMULATION CACHE FOLDER IS 900 mb, MAKE SURE THAT YOU HAVE ATLEAST 2 gb OF EMPTY SPACE IN YOUR DRIVE!
     """
+
 
 if __name__ == "__main__":
     print(grettings())

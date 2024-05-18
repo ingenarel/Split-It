@@ -207,9 +207,11 @@ def start():
     for folder in cache_folders:
         folder_files = os.listdir(f"{cache_folder_path}\\{folder}")
         number_of_files = len(folder_files)
-        print(folder_files)
-        print(number_of_files)
-        print()
+        # print(folder_files)
+        # print(number_of_files)
+        # print()
+        for files in folder:
+            print(files)
         if number_of_files > 0:
             x.add(number_of_files)
     print(len(x))

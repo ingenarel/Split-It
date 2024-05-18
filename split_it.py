@@ -33,7 +33,7 @@ def asking():
         try:
             i = input("What do you want to do?\n=> ").strip().lower()
             if i in ["s", "start"]:
-                ...
+                break
             elif i in ["ver", "version"]:
                 ...
             elif i in ["cls", "clear"]:

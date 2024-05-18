@@ -259,6 +259,11 @@ Do you want to continue? press y to to continue and n to cancel
                 print("Invalid input!")
                 continue
     # print(folders_and_their_files)
+
+    # added_size = 0
+    # while added_size < 2_000_000_000: #this is 2 gigs
+    for
+
 def main():
     if len(sys.argv) == 1:
         print(__grettings())

@@ -188,8 +188,6 @@ def main():
                 commands.add("help")
             elif argument in ["credits", "c"]:
                 commands.add("credits")
-            elif command in ["esc", "exit", "close", "end", "e"]:
-                commands.add("exit")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
         for command in commands:
@@ -199,8 +197,6 @@ def main():
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
-            elif command == "exit":
-                exit(__end())
 
 
 if __name__ == "__main__":

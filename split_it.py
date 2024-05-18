@@ -22,16 +22,13 @@ def cls_():
 
 def read_license():
     with open("LICENSE", "r") as file:
-        lines = file.read()
-        print(lines)
+        return file.read()
 
 def asking():
     while True:
         try:
             i = input("What do you want to do?\n=> ").strip().lower()
-            if i in ["license", "l"]:
-                return "license"
-            elif i in ["s", "start"]:
+            if i in ["s", "start"]:
                 return "start"
             elif i in ["ver", "version"]:
                 return "version"
@@ -41,7 +38,7 @@ def asking():
             elif i in ["esc", "exit", "close"]:
                 exit(end())
             elif i in ["license", "l"]:
-                read_license()
+                print(read_license())
             elif i in ["credits", "c"]:
                 return "credits"
             elif i == "help":
@@ -54,9 +51,8 @@ def asking():
             exit(end())
 
 def main():
-    # print(grettings())
-    # asking()
-    read_license()
+    print(grettings())
+    asking()
 
 if __name__ == "__main__":
     main()

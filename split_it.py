@@ -200,7 +200,7 @@ def main():
             elif command == "credits":
                 print(__credits())
             elif command == "exit":
-                print(__end())
+                exit(__end())
 
 
 if __name__ == "__main__":

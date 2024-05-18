@@ -197,6 +197,8 @@ def main():
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
+            elif command in ["esc", "exit", "close", "end", "e"]:
+                exit(__end())
 
 
 if __name__ == "__main__":

@@ -147,6 +147,18 @@ if you liked this, please star the repo in github!
 """
 
 def helpsite():
+    """
+    Usage:\n
+    print(helpsite())
+
+    Description:\n
+    This is the helpsite. it returns the it as a string.
+    I used raw strings so that it's more readable in the editor.
+
+    if someone edits this, be sure to remember to don't leave any trailing whitespaces.
+    because that will render the whitespaces too and if the terminal size is small, the text will overlap,
+    so it will mess up the rendering.
+    """
     return r"""
 ______________________________________________________________________________________________________________________________________________________
 |:‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾:|

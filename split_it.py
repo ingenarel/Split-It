@@ -5,10 +5,38 @@ except ModuleNotFoundError:
 import os, sys, requests
 
 class Variables:
-    local_version="v1.2"
+    #The title Variable
+    local_version="v1.1"
     title=f"Split It! version {local_version}"
+
+    #URL Specific stuff
     repo_owner = "ingenarel"
     repo_name = "Split-It"
+
+    #folder specific variables for copying/other used in and for the "processing_folders" function
+    folder_name=""
+
+    #The lookup is for processing the folders and Variables for the "processing_folders" function
+    folder_lookup={"1": "config", "2": "data", "3": "mesh", "4": "guiding", "5": "noise", "6": "particles"}
+    current_folder=1
+    max_folders=6
+
+    output_dir=""
+
+    file_count=0
+    source_folder=""
+    folder_list=""
+    source_files=""
+    source_file=""
+
+    files_in_directory=""
+    destination_base_folder="Destination"
+    destination_folder="Destination"
+
+    count=0
+    folder_count=1
+
+    exist_ok=True
 
 def cls_():
     """
@@ -66,6 +94,7 @@ def update_check(url):
                 choice = input("press y to download and n to cancel:\n=>").strip()
 
                 if choice.lower() == "y":
+                    # Download the latest build
                     assets = latest_release.get('assets', [])
 
                     if assets:

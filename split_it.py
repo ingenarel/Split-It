@@ -52,7 +52,7 @@ def asking():
 
 def main():
     print(grettings())
-    asking()
+    print(asking())
 
 if __name__ == "__main__":
     main()

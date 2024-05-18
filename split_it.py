@@ -194,13 +194,13 @@ def asking():
 
 def start():
     while True:
-        cache_folder_path = filedialog.askdirectory()
+        cache_folder_path = filedialog.askdirectory("Input a cache folders, name")
         if cache_folder_path == "":
             print("Folder Selection was cancelled. Trying again...")
             continue
         else:
             break
-    # print(f"\"{cache_folder_path}\"")
+    print(f"\"{cache_folder_path}\"")
     # while True:
     blend_file_path = filedialog.askopenfilenames()
     print(blend_file_path)

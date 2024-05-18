@@ -296,7 +296,8 @@ def main():
                         for starting_arg in starting_args[1:]:
                             if starting_arg not in starting_commands:
                                 starting_commands.append(starting_arg)
-                        commands.append(starting_commands)
+                        if len(starting_commands) != 0:
+                            commands.append(starting_commands)
 
                 else:
                     print(f"\"{argument}\" isn't a valid command. skipping it.")

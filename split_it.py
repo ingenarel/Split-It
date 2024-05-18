@@ -65,6 +65,7 @@ def cls_():
 I didn't implement the command for this os sadly. please report this issue in the github repo.
 
 Or, if you know how, you can try to change the cls() function itself. visit the github page. the cls() function, that clears the screen, is in split_it.py.
+if you have a github account, you can copy the repo, and make a pull request yourself.
 """)
 
 

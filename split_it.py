@@ -31,10 +31,10 @@ def asking():
             print(grettings())
         elif i in ["esc", "exit", "close"]:
             exit()
-        elif i == "license":
+        elif i in ["license", "l"]:
             return "license"
         elif i in ["credits", "c"]:
-            credits()
+            return "credits"
         elif i == "help":
             helpsite()
         else:

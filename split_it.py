@@ -4,6 +4,8 @@ except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
 import os, sys, requests
 
+from tkinter import filedialog
+
 class Variables:
     #The title Variable
     local_version="v1.1"
@@ -156,6 +158,7 @@ def asking():
         try:
             i = input("What do you want to do?\n=> ").strip().lower()
             if i in ["s", "start"]:
+                start()
                 break
             elif i in ["ver", "version", "v"]:
                 update_check(f"https://api.github.com/repos/{Variables.repo_owner}/{Variables.repo_name}/releases/latest")
@@ -176,6 +179,10 @@ def asking():
         except (EOFError, KeyboardInterrupt):
             exit(__end())
 
+def start():
+    test = filedialog.askdirectory()
+    print(test)
+
 def main():
     if len(sys.argv) == 1:
         print(__grettings())
@@ -191,8 +198,11 @@ def main():
                 commands.add("help")
             elif argument in ["credits", "c"]:
                 commands.add("credits")
+            elif argument in  ["s", "start"]:
+                commands.add("start")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
+
         for command in commands:
             if command == "license":
                 print(read_license())
@@ -200,6 +210,9 @@ def main():
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
+            elif command == "start":
+                start()
+
         exit(__end())
 
 

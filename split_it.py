@@ -60,7 +60,7 @@ def main():
         exit(end())
     elif len(sys.argv) > 1:
         commands = set()
-        for argument in sys.argv[:1]:
+        for argument in sys.argv[1:]:
             if argument in ["license", "l"]:
                 commands.add("license")
             else:

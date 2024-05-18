@@ -1,4 +1,4 @@
-from grettings import grettings
+from artddsfdsf import grettings
 from os import system as OSsystem
 from os import name as OSname
 

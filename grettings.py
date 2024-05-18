@@ -40,7 +40,7 @@ ________________________________________________________________________________
 |: ╚═════╝ ╚═╝╚══════╝ ╚═════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝╚═╝                                                                                         :|
 |:                                                                                                                                                                            :|
 |: THIS WILL ONLY WORK FOR FLUID AND SMOKE CACHES ONLY! (As far as I know.. Haven't tested with others yet....)                                                               :|
-|: This is because I only know how fluid cache files works and another sheepit user used it for their and i haven't really worked it other simulations yet such as smoke and fire, particle systems...                   :|
+|: This is because I only know how fluid cache files works and another sheepit user used it for their smoke sim. I haven't really worked it other particles sims yet.         :|
 |: I'll eventually learn them too and then i'll try to upgrade it!                                                                                                            :|
 |: I'll also try to make a smart cache splitter where it will split the files based on their sizes.                                                                           :|
 |: But for now you will have to set how many splits you want to make.                                                                                                         :|

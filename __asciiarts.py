@@ -1,7 +1,7 @@
 def __grettings():
     """
     Usage:\n
-    print(greetings())
+    print(__greetings())
 
     Description:\n
     This greets the user. it returns the greeting as a string.
@@ -70,7 +70,7 @@ Type 'c' for credits.
 def __end():
     """
     Usage:\n
-    print(end())
+    print(__end())
 
     Description:\n
     This is the program outro. it returns the goodbye as a string.
@@ -149,7 +149,7 @@ if you liked this, please star the repo in github!
 def __helpsite():
     """
     Usage:\n
-    print(helpsite())
+    print(__helpsite())
 
     Description:\n
     This is the helpsite. it returns the it as a string.
@@ -238,7 +238,7 @@ ________________________________________________________________________________
 def __credits():
     """
     Usage:\n
-    print(credits())
+    print(__credits())
 
     Description:\n
     This is the credits. it returns the it as a string.
@@ -279,7 +279,7 @@ ________________________________________________________________________________
 def __four_hundred_status_code():
     """
     Usage:\n
-    print(credits())
+    print(__credits())
 
     Description:\n
     This is the credits. it returns the it as a string.

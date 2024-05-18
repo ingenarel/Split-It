@@ -213,8 +213,9 @@ def start():
         # print(folder_files)
         # print(number_of_files)
         # print()
-        for file in folder_files:
-            files_and_their_sizes[file] = genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")
+        if number_of_files != 0:
+            for file in folder_files:
+                files_and_their_sizes[file] = genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")
         # print(files_and_their_sizes)
         folders_and_their_files[folder] = files_and_their_sizes
 

@@ -8,7 +8,7 @@ try:
 except ModuleNotFoundError:
     print("You're missing the tqdm module.")
     print("Wait i'll install it using pip")
-    exit()
+    subprocess.run(["pip", "install", "tqdm"])
 from tkinter import filedialog
 
 class Variables:

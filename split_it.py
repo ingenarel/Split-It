@@ -94,10 +94,6 @@ def update_check(url):
                     print("It creates a folder called latest_build and stores the zip there.")
                     try:
                         choice = input("press y to download and n to cancel:\n=>").strip()
-                    except (EOFError, KeyboardInterrupt):
-                        print("Skipping download.")
-                        break
-                    else:
                         if choice.lower() == "y":
                             # Download the latest build
                             assets = latest_release.get('assets', [])
@@ -147,6 +143,9 @@ def update_check(url):
                         else:
                             print("Invalid choice. Please enter 'yes' or 'no'.")
                             continue
+                    except (EOFError, KeyboardInterrupt):
+                        print("Skipping download.")
+                        break
         else:
             print("Failed to retrieve the latest version from GitHub. Please check your internet connection and try again.")
             input("press enter to go back to the main menu.").strip()

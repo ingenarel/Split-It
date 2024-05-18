@@ -2,7 +2,7 @@ try:
     from __asciiarts import __grettings, __end, __helpsite, __credits, __HTTP_statues_codes_error
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
-import os, sys, requests, subprocess
+import os, sys, requests, subprocess, genericpath
 try:
     from tqdm import tqdm
 except ModuleNotFoundError:
@@ -212,7 +212,8 @@ def start():
         # print()
         for file in folder_files:
             print(file, end=" =>")
-            print(os.stat(f"{cache_folder_path}\\{folder}\\{file}"))
+            # print(os.stat(f"{cache_folder_path}\\{folder}\\{file}"))
+            print(genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}"))
             print()
 
         if number_of_files > 0:

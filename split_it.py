@@ -284,8 +284,8 @@ def main():
                 commands.add("credits")
             elif argument.startswith("s"):
                 starting_args = argument.split("-")
-                print(starting_args)
-                if starting_args[0] == "s" or starting_args == "start":
+                # print(starting_args)
+                if starting_args[0] == "s" or starting_args[0] == "start":
                     print("yes")
                 else:
                     print(f"\"{argument}\" isn't a valid command. skipping it.")

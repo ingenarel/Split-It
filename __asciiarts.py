@@ -266,3 +266,5 @@ ________________________________________________________________________________
 if __name__ == "__main__":
     print(f"executing greetings():\n{grettings()}")
     print(f"executing end():\n{end()}")
+    print(f"executing helpsite():\n{helpsite()}")
+    print(f"executing credits:\n{credits()}")

@@ -1,5 +1,5 @@
 try:
-    from __asciiarts import grettings, end, helpsite, credits
+    from __asciiarts import __grettings, __end, __helpsite, __credits, __four_hundred_status_code
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
 import os, sys, requests
@@ -20,9 +20,9 @@ def cls_():
     """
     if os.name == "nt":
         os.system("cls")
-        print(grettings())
+        print(__grettings())
     elif os.name == "posix":
-        print(grettings())
+        print(__grettings())
         os.system("clear")
     else:
         print("I didn't implement the command for this os sadly. please report this issue in the github repo")
@@ -42,13 +42,7 @@ def update_check(url):
             latest_version = latest_release.get('tag_name')
         else:
             if response.status_code == 400:
-                print("")
-                print("ERROR 400: bad request.")
-                print("")
-                print("his status code indicates that there's something off with the request you sent to the server.")
-                print("t's like filling out a form incorrectly or forgetting to provide essential details.")
-                print("the server couldn't understand or process your request due to missing or malformed data.")
-                print("")
+                print(__four_hundred_status_code)
 
             elif response.status_code == 401:
                 print("")
@@ -207,25 +201,25 @@ def asking():
             elif i in ["cls", "clear"]:
                 cls_()
             elif i in ["esc", "exit", "close"]:
-                exit(end())
+                exit(__end())
             elif i in ["license", "l"]:
                 print(read_license())
             elif i in ["credits", "c"]:
-                print(credits())
+                print(__credits())
             elif i in ["help", "h"]:
-                print(helpsite())
+                print(__helpsite())
             else:
                 print("")
                 print("Invalid input.")
                 print("")
         except (EOFError, KeyboardInterrupt):
-            exit(end())
+            exit(__end())
 
 def main():
     if len(sys.argv) == 1:
-        print(grettings())
+        print(__grettings())
         asking()
-        exit(end())
+        exit(__end())
     elif len(sys.argv) > 1:
         commands = set()
         for argument in sys.argv[1:]:
@@ -242,9 +236,9 @@ def main():
             if command == "license":
                 print(read_license())
             elif command == "help":
-                print(helpsite())
+                print(__helpsite())
             elif command == "credits":
-                print(credits())
+                print(__credits())
 
 
 if __name__ == "__main__":

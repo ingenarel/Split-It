@@ -1,4 +1,4 @@
-def grettings():
+def __grettings():
     """
     Usage:\n
     print(greetings())
@@ -67,7 +67,7 @@ Type 'help' for an in depth guide about every command.
 Type 'c' for credits.
 """
 
-def end():
+def __end():
     """
     Usage:\n
     print(end())
@@ -146,7 +146,7 @@ I hope you have a great life.
 if you liked this, please star the repo in github!
 """
 
-def helpsite():
+def __helpsite():
     """
     Usage:\n
     print(helpsite())
@@ -235,7 +235,7 @@ ________________________________________________________________________________
 
     # |::| - this is for the devs so that we can copy paste it every time we need to expand the box
 
-def credits():
+def __credits():
     """
     Usage:\n
     print(credits())
@@ -276,18 +276,18 @@ ________________________________________________________________________________
     # chaos you can add your other details here if you want
     # also anyone that contributes can add their details here
 
-def four_hundred_status_code():
+def __four_hundred_status_code():
     return"""
-                print("")
-                print("ERROR 400: bad request.")
-                print("")
-                print("his status code indicates that there's something off with the request you sent to the server.")
-                print("t's like filling out a form incorrectly or forgetting to provide essential details.")
-                print("the server couldn't understand or process your request due to missing or malformed data.")
+ERROR 400: bad request.
+
+his status code indicates that there's something off with the request you sent to the server.
+t's like filling out a form incorrectly or forgetting to provide essential details.
+the server couldn't understand or process your request due to missing or malformed data.
     """
 
 if __name__ == "__main__":
-    print(f"executing greetings():\n{grettings()}")
-    print(f"executing end():\n{end()}")
-    print(f"executing helpsite():\n{helpsite()}")
-    print(f"executing credits:\n{credits()}")
+    print(f"executing greetings():\n{__grettings()}")
+    print(f"executing end():\n{__end()}")
+    print(f"executing helpsite():\n{__helpsite()}")
+    print(f"executing credits:\n{__credits()}")
+    print(f"executing four_hundred_status_code():\n{__four_hundred_status_code()}")

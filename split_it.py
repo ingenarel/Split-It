@@ -5,7 +5,10 @@ except ModuleNotFoundError:
 import os, sys, requests
 try:
     from shitfuck import tqdm
-
+except ModuleNotFoundError:
+    print("You're missing the tqdm module.")
+    print("Wait i'll install it using pip")
+    exit()
 from tkinter import filedialog
 
 class Variables:

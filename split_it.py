@@ -22,29 +22,21 @@ def asking():
         i = input("What do you want to do?\n=> ").strip().lower()
         if i in ["license", "l"]:
             return "license"
-
         elif i in ["s", "start"]:
             return "start"
-
         elif i in ["ver", "version"]:
             return "version"
-
         elif i in ["cls", "clear"]:
             cls_()
             print(grettings())
-
-        # elif i in ["esc", "exit", "close"]:
-        #     exit()
-
-        # elif i == "license":
-
-
-        # elif i in ["credits", "c"]:
-        #     credits()
-
-        # elif i == "help":
-        #     helpsite()
-
+        elif i in ["esc", "exit", "close"]:
+            exit()
+        elif i == "license":
+            return "license"
+        elif i in ["credits", "c"]:
+            credits()
+        elif i == "help":
+            helpsite()
         else:
             print("")
             print("Invalid input.")

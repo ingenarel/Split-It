@@ -20,6 +20,11 @@ def cls_():
     else:
         print("This os is not supported for this command")
 
+def read_license():
+    with open("LICENSE", "r") as file:
+        lines = file.read()
+        print(lines)
+
 def asking():
     while True:
         try:
@@ -36,7 +41,7 @@ def asking():
             elif i in ["esc", "exit", "close"]:
                 exit(end())
             elif i in ["license", "l"]:
-                return "license"
+                read_license()
             elif i in ["credits", "c"]:
                 return "credits"
             elif i == "help":
@@ -50,7 +55,7 @@ def asking():
 
 def main():
     print(grettings())
-    print(asking())
+    asking()
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,7 @@
 try:
     from __asciiarts import grettings
+except ModuleNotFoundError:
+    exit("You're missing __asciiarts.py")
 from os import system as OSsystem
 from os import name as OSname
 

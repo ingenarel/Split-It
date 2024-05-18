@@ -2,7 +2,7 @@ try:
     from __asciiarts import grettings, end, helpsite, credits
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
-import os
+import os, sys
 
 def cls_():
     """

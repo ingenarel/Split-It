@@ -1,6 +1,7 @@
 def grettings():
     """
-    This greets the user.
+    This greets the user. it returns the greeting as a string.
+    I used raw strings so that it's more readable in the editor.
     """
     return r"""
  ________       ________    ___           ___      __________               ___      __________   ___

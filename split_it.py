@@ -61,7 +61,7 @@ def cls_():
         os.system("clear")
         print(__grettings())
     else:
-        print("I didn't implement the command for this os sadly. please report this issue in the github repo")
+        print("I didn't implement the command for this os sadly. please report this issue in the github repo.")
 
 def read_license():
     try:

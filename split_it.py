@@ -1,5 +1,5 @@
 try:
-    from __asciiarts import grettings, end, helpsite
+    from __asciiarts import grettings, end, helpsite, credits
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
 from os import system as OSsystem
@@ -46,7 +46,7 @@ def main():
             elif i in ["license", "l"]:
                 print(read_license())
             elif i in ["credits", "c"]:
-                ...
+                print(credits())
             elif i == "help":
                 print(helpsite())
             else:

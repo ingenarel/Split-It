@@ -4,11 +4,11 @@ except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
 import os, sys, requests, subprocess
 try:
-    from shitfuck import tqdm
+    from tqdm import tqdm
 except ModuleNotFoundError:
     print("You're missing the tqdm module.")
     print("Wait i'll install it using pip")
-    subprocess.run(["pip", "install", "shitfuck"])
+    subprocess.run(["pip", "install", "tqdm"])
 from tkinter import filedialog
 
 class Variables:
@@ -207,10 +207,12 @@ def start():
     for folder in cache_folders:
         folder_files = os.listdir(f"{cache_folder_path}\\{folder}")
         number_of_files = len(folder_files)
-        print(folder_files)
+        # print(folder_files)
         # print(number_of_files)
         # print()
-
+        for file in folder_files:
+            # print(file)
+            print(sys.getsizeof(file))
         if number_of_files > 0:
             x.add(number_of_files)
     print(len(x))

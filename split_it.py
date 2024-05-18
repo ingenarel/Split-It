@@ -2,8 +2,7 @@ try:
     from __asciiarts import grettings, end, helpsite, credits
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
-from os import system as OSsystem
-from os import name as OSname
+import os
 
 def cls_():
     """
@@ -13,12 +12,12 @@ def cls_():
     description:\n
     this clears the terminal screen based on the os.
     """
-    if OSname == "nt":
-        OSsystem("cls")
+    if os.name == "nt":
+        os.system("cls")
         print(grettings())
-    elif OSsystem == "posix":
+    elif os.name == "posix":
         print(grettings())
-        OSsystem("clear")
+        os.system("clear")
     else:
         print("I didn't implement the command for this os sadly. please report this issue in the github repo")
 

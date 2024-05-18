@@ -68,8 +68,20 @@ Type 'c' for credits.
 """
 
 def end():
+    """
+    Usage:\n
+    print(end())
 
-    return r"""Your splitting is finished. yayyyyyyy!!!!!
+    Description:\n
+    This greets the user. it returns the greeting as a string.
+    I used raw strings so that it's more readable in the editor.
+
+    if someone edits this, be sure to remember to don't leave any trailing whitespaces.
+    because that will render the whitespaces too and if the terminal size is small, the text will overlap,
+    so it will mess up the rendering.
+    """
+    return r"""
+Your splitting is finished. yayyyyyyy!!!!!
 
 ++++++++++++++++**++*%#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++@*#+###+%*#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

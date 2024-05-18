@@ -3,7 +3,7 @@ def grettings():
     This greets the user. it returns the greeting as a string.
     I used raw strings so that it's more readable in the editor.
     if someone edits this, be sure to remember to don't leave any trailing whitespaces.
-    because that has a chance to mess up the rendering on the terminal.
+    because that will mess up the rendering on the terminal if the terminal size is small.
     """
     return r"""
  ________       ________    ___           ___      __________               ___      __________   ___
@@ -38,7 +38,6 @@ ________________________________________________________________________________
 |: ██████╔╝██║███████║╚██████╗███████╗██║  ██║██║██║ ╚═╝ ██║███████╗██║  ██║██╗██╗██╗                                                                                         :|
 |: ╚═════╝ ╚═╝╚══════╝ ╚═════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝╚═╝                                                                                         :|
 |:                                                                                                                                                                            :|
-|: THIS IS JUST A TEST PROJECT! SO THERE MAY BE STILL SOME BUGS LEFT!!!                                                                                                       :|
 |: THIS WILL ONLY WORK FOR FLUID CACHES ONLY! (As far as I know.. Haven't tested with others yet....)                                                                         :|
 |: This is because I only know how fluid cache files works and i haven't really worked it other simulations yet such as smoke and fire, particle systems...                   :|
 |: I'll eventually learn them too and then i'll try to upgrade it!                                                                                                            :|

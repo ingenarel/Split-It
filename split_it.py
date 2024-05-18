@@ -28,9 +28,7 @@ def read_license():
     except FileNotFoundError:
         exit("The license file is missing")
 
-
-def main():
-    print(grettings())
+def asking():
     while True:
         try:
             i = input("What do you want to do?\n=> ").strip().lower()
@@ -54,6 +52,19 @@ def main():
                 print("")
         except (EOFError, KeyboardInterrupt):
             exit(end())
+
+def main():
+    if len(sys.argv) == 1:
+        print(grettings())
+        asking()
+        exit(end())
+    elif len(sys.argv) > 1:
+        commands = set()
+        for argument in sys.argv:
+            commands.add(argument)
+        for command in commands:
+            if command == "license":
+                read_license()
 
 if __name__ == "__main__":
     main()

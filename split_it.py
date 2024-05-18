@@ -63,10 +63,9 @@ def update_check(url):
                 print("A new version is available. Do you want to download it?")
                 print("You if you want to use the latest version, you need to start it from the downloaded version though.")
                 print("It creates a folder called latest_build and stores the zip there.")
-                choice = input("press y to download and n to cancel: ").strip()
+                choice = input("press y to download and n to cancel:\n=>").strip()
 
                 if choice.lower() == "y":
-                    # Download the latest build
                     assets = latest_release.get('assets', [])
 
                     if assets:

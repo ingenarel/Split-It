@@ -53,10 +53,11 @@ def cls_():
     description:\n
     this clears the terminal screen based on the os.
     """
-    if os.name == "nt":
+    name = os.name
+    if name == "nt":
         os.system("cls")
         print(__grettings())
-    elif os.name == "posix":
+    elif name == "posix":
         os.system("clear")
         print(__grettings())
     else:

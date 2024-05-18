@@ -15,7 +15,9 @@ def cls_():
     """
     if OSname == "nt":
         OSsystem("cls")
+        print(grettings())
     elif OSsystem == "posix":
+        print(grettings())
         OSsystem("clear")
     else:
         print("This os is not supported for this command")
@@ -39,7 +41,6 @@ def main():
                 ...
             elif i in ["cls", "clear"]:
                 cls_()
-                print(grettings())
             elif i in ["esc", "exit", "close"]:
                 exit(end())
             elif i in ["license", "l"]:

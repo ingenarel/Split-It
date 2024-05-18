@@ -202,10 +202,17 @@ def start():
         else:
             break
     print(f"\"{cache_folder_path}\"")
-    # while True:
-    print("Select your blend file")
-    blend_file_path = filedialog.askopenfilename(title="Select your blend file")
-    print(blend_file_path)
+    while True:
+        print("Select your blend file")
+        blend_file_path = filedialog.askopenfilename(title="Select your blend file")
+        if blend_file_path == "":
+            continue
+        elif blend_file_path.endswith(".blend") == False:
+            print("That's not a valid blend file")
+            continue
+        else:
+            break
+    print(f"\"{blend_file_path}\"")
     cache_folders = os.listdir(cache_folder_path)
     # print(cache_folders)
     x =  set()           # a_set_to_check_there_are_more_or_less_files_in_a_folder

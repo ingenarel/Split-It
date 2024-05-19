@@ -276,35 +276,35 @@ def main():
         asking()
         exit(__end())
     elif len(sys.argv) > 1:
-        commands = []
+        main_commands = []
         for argument in sys.argv[1:]:
             if argument.lower() in ["license", "l"]:
-                if "license" not in commands:
-                    commands.append("license")
+                if "license" not in main_commands:
+                    main_commands.append("license")
             elif argument.lower() in ["help", "h"]:
-                if "help" not in commands:
-                    commands.append("help")
+                if "help" not in main_commands:
+                    main_commands.append("help")
             elif argument.lower() in ["credits", "c"]:
-                if "credits" not in commands:
-                    commands.append("credits")
+                if "credits" not in main_commands:
+                    main_commands.append("credits")
             elif argument.lower().startswith("s"):
-                starting_args = argument.split("-")
-                # print(starting_args)
-                if starting_args[0].lower() == "s" or starting_args[0].lower() == "start":
-                    if starting_args not in commands:
+                starting_command_args = argument.split("-")
+                # print(starting_command_args)
+                if starting_command_args[0].lower() == "s" or starting_command_args[0].lower() == "start":
+                    if starting_command_args not in main_commands:
                         starting_commands = []
-                        for starting_arg in starting_args[1:]:
+                        for starting_arg in starting_command_args[1:]:
                             if starting_arg not in starting_commands:
-                                starting_commands.append(starting_arg)
-                        if len(starting_args) != 0:
-                            commands.append(starting_commands)
+                                starting_main_commands.append(starting_arg)
+                        if len(starting_command_args) != 0:
+                            main_commands.append(starting_main_commands)
 
                 else:
                     print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
-        print(commands)
-        for command in commands:
+        print(main_commands)
+        for command in main_commands:
             print(type(command))
             if command == "license":
                 print(read_license())

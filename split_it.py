@@ -295,7 +295,7 @@ def main():
                         if starting_command_args_list not in main_commands:
                             starting_commands = []
                             for starting_arg in starting_command_args_list[1:]:
-                                if matches:= re.search(r"cachefolder=(.+)", starting_arg):
+                                if matches:= re.search(r"(?:cachefolder=(.+))", starting_arg):
                                     # print(starting_arg)
                                     cache_folder = matches.group(1)
                                     print(cache_folder)

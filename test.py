@@ -57,5 +57,6 @@ blend_file_size = 1_38_016
 
 max_file_size = 2_000_000_000
 
-for folders in shit:
-    print(folders)
+for folder in shit:
+    for files in shit[folder]:
+        print(files)

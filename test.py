@@ -53,15 +53,15 @@ shit = {
     ],
 }
 
-blend_file_size = 1_38_016
+# blend_file_size = 1_38_016
 
-max_file_size = 2_000_000_000
+# max_file_size = 2_000_000_000
 
-size = max_file_size - blend_file_size
-for folder in shit:
-    n = 0
-    for files in shit[folder]:
-        while size < max_file_size:
-            size += shit[folder][n]
-            n += 1
-            print(files)
+# size = max_file_size - blend_file_size
+# for folder in shit:
+#     n = 0
+#     for files in shit[folder]:
+#         while size < max_file_size:
+#             size += shit[folder][n][]
+#             n += 1
+#             print(files)

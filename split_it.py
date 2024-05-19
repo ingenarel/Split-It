@@ -289,7 +289,7 @@ def main():
                 if "credits" not in main_commands:
                     main_commands.append("credits")
             elif matches:= re.search(r"^(?:s-|start-)(?:cachefolder|cf)=\*(?P<cachefolderpath>[^\*]+)\*-(?:blendfile|bf)=\*(?P<blendfilepath>[^\*]+)\*$", argument, re.IGNORECASE):
-                starting_arguments_cleaned = {"cachefolderpath": matches.group("cachefolderpath"), "blendfilepath":matches.group("blendfilepath")}
+                starting_arguments_cleaned = {"cachefolderpath": matches.group("cachefolderpath"), "blendfilepath": matches.group("blendfilepath")}
                 if starting_arguments_cleaned not in main_commands:
                     main_commands.append(starting_arguments_cleaned)
             else:
@@ -304,7 +304,7 @@ def main():
             elif command == "credits":
                 print(__credits())
             elif type(command) == dict:
-
+                start(command["cachefolderpath"], command["blendfilepath"])
 
         # exit(__end())
 

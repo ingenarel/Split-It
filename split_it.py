@@ -271,11 +271,13 @@ def __spliter__(files_in_dict, blend_file):
     # print(files_in_dict)
     # print(blend_file_size)
     for folders in files_in_dict:
+        y = 0
         for files in files_in_dict[folders]:
             x = 0
             while x < 3:
-                print(files_in_dict[folders][x])
+                print(files_in_dict[folders][x + y])
                 x += 1
+                y += 1
 
 def main():
     if len(sys.argv) == 1:

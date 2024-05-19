@@ -288,7 +288,7 @@ def main():
             elif argument.lower() in ["credits", "c"]:
                 if "credits" not in main_commands:
                     main_commands.append("credits")
-            elif re.search(r"^(?:s-|start-)(?:cachefolder|cf)=\*(?:[^\*]+)\*-(?:blendfile|bf)=\*(?:[^\*]+)\*$", argument, re.IGNORECASE):
+            elif re.search(r"^(?:s-|start-)(?:cachefolder|cf)=\*(?P<cachefolderpath>[^\*]+)\*-(?:blendfile|bf)=\*(?P<blendfilepath>[^\*]+)\*$", argument, re.IGNORECASE):
                 if argument not in main_commands:
                     main_commands.append(argument)
             # else:

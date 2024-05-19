@@ -224,15 +224,18 @@ def start(cache_folder_path, blend_file_path):
     for folder in cache_folders:
         folder_files = os.listdir(f"{cache_folder_path}\\{folder}")
         number_of_files = len(folder_files)
-        files_and_their_sizes = {}
+        # files_and_their_sizes = {}
         # print(folder_files)
         # print(number_of_files)
         # print()
         if number_of_files != 0:
             for file in folder_files:
-                files_and_their_sizes[file] = genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")
+                # files_and_their_sizes[file] = genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")
+                file_and_value = []
+                file_and_value.append({file: genericpath.getsize(f"{cache_folder_path}\\{folder}\\{file}")})
+
         # print(files_and_their_sizes)
-            folders_and_their_files[folder] = files_and_their_sizes
+            folders_and_their_files[folder] = file_and_value
 
         if number_of_files > 0:
             x.add(number_of_files)

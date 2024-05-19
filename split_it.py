@@ -278,7 +278,7 @@ def main():
     elif len(sys.argv) > 1:
         main_commands = []
         for argument in sys.argv[1:]:
-            print(argument)
+            # print(argument)
             if argument.lower() in ["license", "l"]:
                 if "license" not in main_commands:
                     main_commands.append("license")
@@ -288,7 +288,7 @@ def main():
             elif argument.lower() in ["credits", "c"]:
                 if "credits" not in main_commands:
                     main_commands.append("credits")
-            elif re.search(r"^(?:s-|start-)cachefolder=\*(?:[^\*]+)\*-blendfile=\*(?:[^\*]+)\*$", argument, re.IGNORECASE):
+            elif re.search(r"^(?:s-|start-)(?:cachefolder|cf)=\*(?:[^\*]+)\*-(?:blendfile|bf)=\*(?:[^\*]+)\*$", argument, re.IGNORECASE):
                 if argument not in main_commands:
                     main_commands.append(argument)
             # else:

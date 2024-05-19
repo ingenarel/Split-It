@@ -287,29 +287,12 @@ def main():
             elif argument.lower() in ["credits", "c"]:
                 if "credits" not in main_commands:
                     main_commands.append("credits")
-            elif argument.lower() == "s" or argument.lower() == "start":
-                starting_command_args_list = argument.split("-")
-                # print(starting_command_args_list)
-                if len(starting_command_args_list[1:]) != 0:
-                    if starting_command_args_list[0].lower() == "s" or starting_command_args_list[0].lower() == "start":
-                        if starting_command_args_list not in main_commands:
-                            starting_commands = []
-                            for starting_arg in starting_command_args_list[1:]:
-                                if matches:= re.search(r"(?:cachefolder=(?P<cachefolderpath>.+)|blendfile=(?P<blendfilepath>.+))", starting_arg):
-                                    # print(starting_arg)
-                                    cache_folder = matches.group("cachefolderpath")
-                                    blend_file = matches.group("blendfilepath")
-                                    print(f"=>{cache_folder}<=")
-                                    print(f"=>{blend_file}<=")
-                                    if starting_arg not in starting_commands:
-                                        starting_commands.append(starting_arg)
-                            if len(starting_command_args_list) != 0:
-                                main_commands.append(starting_commands)
-                else:
-                    print(f"if you want to use the \"{argument}\" command, you need to give the neccessary arguments. skipping it.")
+            elif re.search(r"^(?:s-|start-)cachefolder=\"(?:[^\"]+)\"-blendfile=\"(?:[^\"]+)\"$", argument, re.IGNORECASE):
+                if argument not in main_commands:
+                    main_commands.append(argument)
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
-        # print(main_commands)
+        print(main_commands)
         for command in main_commands:
             # print(type(command))
             if command == "license":

@@ -298,8 +298,9 @@ def main():
                                 if matches:= re.search(r"(?:cachefolder=(?P<cachefolderpath>.+)|blendfile=(?P<blendfilepath>.+))", starting_arg):
                                     # print(starting_arg)
                                     cache_folder = matches.group("cachefolderpath")
-                                    blend_folder = matches.group("blendfilepath")
+                                    blend_file = matches.group("blendfilepath")
                                     print(cache_folder)
+                                    print(blend_file)
                                     if starting_arg not in starting_commands:
                                         starting_commands.append(starting_arg)
                             if len(starting_command_args_list) != 0:

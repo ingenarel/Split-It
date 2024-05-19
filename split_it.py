@@ -287,7 +287,7 @@ def main():
             elif argument.lower() in ["credits", "c"]:
                 if "credits" not in main_commands:
                     main_commands.append("credits")
-            elif argument.lower().startswith("s"):
+            elif argument.lower() == "s" or argument.lower() == "start":
                 starting_command_args_list = argument.split("-")
                 # print(starting_command_args_list)
                 if len(starting_command_args_list[1:]) != 0:
@@ -306,8 +306,8 @@ def main():
                             if len(starting_command_args_list) != 0:
                                 main_commands.append(starting_commands)
 
-                    else:
-                        print(f"if you want to use the \"{argument}\" command, you need to give the neccessary arguments.")
+                else:
+                    print(f"if you want to use the \"{argument}\" command, you need to give the neccessary arguments.")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
         # print(main_commands)

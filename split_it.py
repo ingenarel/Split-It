@@ -268,16 +268,11 @@ Do you want to continue? press y to to continue and n to cancel
 
 def __spliter__(files_in_dict, blend_file):
     blend_file_size = genericpath.getsize(blend_file)
-    # print(files_in_dict)
+    print(files_in_dict)
     # print(blend_file_size)
-    for folders in files_in_dict:
-        y = 0
-        for files in files_in_dict[folders]:
-            x = 0
-            y += 1
-            while x < 3:
-                print(files_in_dict[folders][x + y])
-                x += 1
+    # for folders in files_in_dict:
+    #     for files in files_in_dict[folders]:
+
 
 def main():
     if len(sys.argv) == 1:

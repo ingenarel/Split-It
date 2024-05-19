@@ -299,8 +299,8 @@ def main():
                                     # print(starting_arg)
                                     cache_folder = matches.group("cachefolderpath")
                                     blend_file = matches.group("blendfilepath")
-                                    print(cache_folder)
-                                    print(blend_file)
+                                    print(f"=>{cache_folder}<=")
+                                    print(f"=>{blend_file}<=")
                                     if starting_arg not in starting_commands:
                                         starting_commands.append(starting_arg)
                             if len(starting_command_args_list) != 0:

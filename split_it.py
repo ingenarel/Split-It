@@ -295,9 +295,10 @@ def main():
                         if starting_command_args_list not in main_commands:
                             starting_commands = []
                             for starting_arg in starting_command_args_list[1:]:
-                                if matches:= re.search(r"(?:cachefolder=(?P<cachefolderpath>.+))", starting_arg):
+                                if matches:= re.search(r"(?:cachefolder=(?P<cachefolderpath>.+)|blendfile=(?P<blendfilepath>.+))", starting_arg):
                                     # print(starting_arg)
                                     cache_folder = matches.group("cachefolderpath")
+                                    blend_folder = matches.group("blendfilepath")
                                     print(cache_folder)
                                     if starting_arg not in starting_commands:
                                         starting_commands.append(starting_arg)

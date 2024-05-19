@@ -265,10 +265,8 @@ Do you want to continue? press y to to continue and n to cancel
     __spliter__(folders_and_their_files, blend_file_path)
 
 def __spliter__(files_in_dict, blend_file):
-    # print(files_in_dict)
-    for folders in files_in_dict:
-        for files_in_folders in files_in_dict[folders]:
-            print(files_in_folders)
+    print(files_in_dict)
+
 
 def main():
     if len(sys.argv) == 1:
@@ -294,7 +292,7 @@ def main():
                     main_commands.append(starting_arguments_cleaned)
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
-        print(main_commands)
+        # print(main_commands)
         for command in main_commands:
             # print(type(command))
             if command == "license":

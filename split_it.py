@@ -270,9 +270,8 @@ def __spliter__(files_in_dict, blend_file):
     blend_file_size = genericpath.getsize(blend_file)
     # print(files_in_dict)
     # print(blend_file_size)
-    x = 0
     for folders in files_in_dict:
-        print(files_in_dict[folders][x])
+        print(files_in_dict[folders][0])
 
 
 def main():

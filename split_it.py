@@ -307,7 +307,7 @@ def main():
                                 main_commands.append(starting_commands)
 
                 else:
-                    print(f"\"{argument}\" isn't a valid command. skipping it.")
+                    print(f"if you want to use the \"{argument}\" command, you need to use it with ")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
         # print(main_commands)

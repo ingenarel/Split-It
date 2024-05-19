@@ -294,10 +294,10 @@ def main():
                     if starting_command_args_list[0].lower() == "s" or starting_command_args_list[0].lower() == "start":
                         if starting_command_args_list not in main_commands:
                             starting_commands = []
-                            for starting_arg in starting_command_args_list:
-                                if matches:= re.search(r"^cachefolder=\"(.+)\"$", starting_arg):
-                                    print(starting_arg)
-                                    print(matches)
+                            for starting_arg in starting_command_args_list[1:]:
+                                if matches:= re.search(r"^cachefolder=(.+)$", starting_arg):
+                                    # print(starting_arg)
+                                    cache_folder = matches.group(1)
                                     if starting_arg not in starting_commands:
                                         starting_commands.append(starting_arg)
                             if len(starting_command_args_list) != 0:

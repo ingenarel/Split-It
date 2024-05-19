@@ -291,9 +291,9 @@ def main():
             elif re.search(r"^(?:s-|start-)(?:cachefolder|cf)=\*(?P<cachefolderpath>[^\*]+)\*-(?:blendfile|bf)=\*(?P<blendfilepath>[^\*]+)\*$", argument, re.IGNORECASE):
                 if argument not in main_commands:
                     main_commands.append(argument)
-            # else:
-            #     print(f"\"{argument}\" isn't a valid command. skipping it.")
-        # print(main_commands)
+            else:
+                print(f"\"{argument}\" isn't a valid command. skipping it.")
+        print(main_commands)
         for command in main_commands:
             # print(type(command))
             if command == "license":

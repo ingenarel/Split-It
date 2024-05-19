@@ -290,17 +290,18 @@ def main():
             elif argument.lower().startswith("s"):
                 starting_command_args_list = argument.split("-")
                 # print(starting_command_args_list)
-                if starting_command_args_list[0].lower() == "s" or starting_command_args_list[0].lower() == "start":
-                    if starting_command_args_list not in main_commands:
-                        starting_commands = []
-                        for starting_arg in starting_command_args_list[1:]:
-                            if starting_arg not in starting_commands:
-                                starting_commands.append(starting_arg)
-                        if len(starting_command_args_list) != 0:
-                            main_commands.append(starting_commands)
+                if len(starting_command_args_list[1:]) != 0:
+                    if starting_command_args_list[0].lower() == "s" or starting_command_args_list[0].lower() == "start":
+                        if starting_command_args_list not in main_commands:
+                            starting_commands = []
+                            for starting_arg in starting_command_args_list[1:]:
+                                if starting_arg not in starting_commands:
+                                    starting_commands.append(starting_arg)
+                            if len(starting_command_args_list) != 0:
+                                main_commands.append(starting_commands)
 
-                else:
-                    print(f"\"{argument}\" isn't a valid command. skipping it.")
+                    else:
+                        print(f"Your starting command syntax is incorrect")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
         print(main_commands)

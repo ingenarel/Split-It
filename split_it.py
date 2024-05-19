@@ -294,9 +294,10 @@ def main():
                     if starting_command_args_list[0].lower() == "s" or starting_command_args_list[0].lower() == "start":
                         if starting_command_args_list not in main_commands:
                             starting_commands = []
-                            for starting_arg in starting_command_args_list[1:]:
-                                if re.search():
+                            for starting_arg in starting_command_args_list:
+                                if matches:= re.search(r"^cachefolder=\"(.+)\"$", starting_arg):
                                     print(starting_arg)
+                                    print(matches)
                                     if starting_arg not in starting_commands:
                                         starting_commands.append(starting_arg)
                             if len(starting_command_args_list) != 0:
@@ -306,9 +307,9 @@ def main():
                     print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
-        print(main_commands)
+        # print(main_commands)
         for command in main_commands:
-            print(type(command))
+            # print(type(command))
             if command == "license":
                 print(read_license())
             elif command == "help":

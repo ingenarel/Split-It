@@ -295,7 +295,7 @@ def main():
                         if starting_command_args_list not in main_commands:
                             starting_commands = []
                             for starting_arg in starting_command_args_list[1:]:
-                                if re.match(starting_arg, r"^cachefolder=\"\.+""$", re.IGNORECASE):
+                                if re.search(starting_arg, r"^cachefolder=\".+\"$"):
                                     if starting_arg not in starting_commands:
                                         starting_commands.append(starting_arg)
                             if len(starting_command_args_list) != 0:

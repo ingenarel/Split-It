@@ -303,8 +303,8 @@ def main():
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
-            elif type(command) == list:
-                print(command)
+            elif type(command) == dict:
+
 
         # exit(__end())
 

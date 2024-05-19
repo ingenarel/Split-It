@@ -274,10 +274,10 @@ def __spliter__(files_in_dict, blend_file):
         y = 0
         for files in files_in_dict[folders]:
             x = 0
+            y += 1
             while x < 3:
                 print(files_in_dict[folders][x + y])
                 x += 1
-                y += 1
 
 def main():
     if len(sys.argv) == 1:

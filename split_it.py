@@ -288,9 +288,8 @@ def main():
             elif argument.lower() in ["credits", "c"]:
                 if "credits" not in main_commands:
                     main_commands.append("credits")
-            elif re.search(r"^(?:s-|start-)(?:cachefolder|cf)=\*(?P<cachefolderpath>[^\*]+)\*-(?:blendfile|bf)=\*(?P<blendfilepath>[^\*]+)\*$", argument, re.IGNORECASE):
-                if argument not in main_commands:
-                    main_commands.append(argument)
+            elif matches:= re.search(r"^(?:s-|start-)(?:cachefolder|cf)=\*(?P<cachefolderpath>[^\*]+)\*-(?:blendfile|bf)=\*(?P<blendfilepath>[^\*]+)\*$", argument, re.IGNORECASE):
+
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
         print(main_commands)

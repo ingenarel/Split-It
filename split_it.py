@@ -230,7 +230,7 @@ def start(cache_folder_path, blend_file_path):
         # print()
         if number_of_files != 0:
             for files in folder_files:
-                files_and_their_sizes.append({f"{cache_folder_path}{folder}\\{files}": genericpath.getsize(f"{cache_folder_path}\\{folder}\\{files}")})
+                files_and_their_sizes.append([f"{cache_folder_path}{folder}\\{files}", genericpath.getsize(f"{cache_folder_path}\\{folder}\\{files}")])
 
         # print(files_and_their_sizes)
             folders_and_their_files[f"{cache_folder_path}{folder}"] = files_and_their_sizes

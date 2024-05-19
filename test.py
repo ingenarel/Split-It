@@ -59,13 +59,7 @@ max_file_size = 2_000_000_000
 size = max_file_size - blend_file_size
 for folder in shit:
     n = 0
-    while size < max_file_size:
-        for files in shit[folder]:
-            try:
-                print(files)
-                print(size)
-                size += shit[folder][n][1]
-                n += 1
-            except IndexError:
-                break
+    for files in shit[folder]:
+        while size < max_file_size:
+            print(files)
 

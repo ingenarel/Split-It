@@ -293,7 +293,7 @@ def main():
                     main_commands.append(argument)
             # else:
             #     print(f"\"{argument}\" isn't a valid command. skipping it.")
-        print(main_commands)
+        # print(main_commands)
         for command in main_commands:
             # print(type(command))
             if command == "license":
@@ -302,8 +302,8 @@ def main():
                 print(__helpsite())
             elif command == "credits":
                 print(__credits())
-            # elif type(command) == list:
-            #     print(command)
+            elif type(command) == list:
+                print(command)
 
         # exit(__end())
 

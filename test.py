@@ -57,9 +57,10 @@ blend_file_size = 1_38_016
 max_file_size = 2_000_000_000
 
 size = max_file_size - blend_file_size
+
+test = 0
+
 for folder in shit:
-    n = 0
     for files in shit[folder]:
-        while size < max_file_size:
-            print(files)
+        test += files[1]
 

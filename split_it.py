@@ -288,15 +288,15 @@ def main():
                 if "credits" not in main_commands:
                     main_commands.append("credits")
             elif argument.lower().startswith("s"):
-                starting_command_args = argument.split("-")
-                # print(starting_command_args)
-                if starting_command_args[0].lower() == "s" or starting_command_args[0].lower() == "start":
-                    if starting_command_args not in main_commands:
+                starting_command_args_list = argument.split("-")
+                # print(starting_command_args_list)
+                if starting_command_args_list[0].lower() == "s" or starting_command_args_list[0].lower() == "start":
+                    if starting_command_args_list not in main_commands:
                         starting_commands = []
-                        for starting_arg in starting_command_args[1:]:
+                        for starting_arg in starting_command_args_list[1:]:
                             if starting_arg not in starting_commands:
-                                starting_main_commands.append(starting_arg)
-                        if len(starting_command_args) != 0:
+                                starting_commands.append(starting_arg)
+                        if len(starting_command_args_list) != 0:
                             main_commands.append(starting_main_commands)
 
                 else:

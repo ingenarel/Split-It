@@ -2,7 +2,7 @@ try:
     from __asciiarts import __grettings, __end, __helpsite, __credits, __HTTP_statues_codes_error
 except ModuleNotFoundError:
     exit("You're missing __asciiarts.py")
-import os, sys, requests, subprocess, genericpath
+import os, sys, requests, subprocess, genericpath, re
 try:
     from tqdm import tqdm
 except ModuleNotFoundError:

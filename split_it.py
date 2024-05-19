@@ -300,8 +300,8 @@ def main():
                             if len(starting_command_args_list) != 0:
                                 main_commands.append(starting_commands)
 
-                    else:
-                        print(f"Your starting command syntax is incorrect")
+                else:
+                    print(f"\"{argument}\" isn't a valid command. skipping it.")
             else:
                 print(f"\"{argument}\" isn't a valid command. skipping it.")
         print(main_commands)

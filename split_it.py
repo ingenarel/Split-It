@@ -244,7 +244,7 @@ def start(cache_folder_path, blend_file_path):
         while True:
             sim_cache_fuck_up = input("""
 you have a folder that contains more or less files than the other folders.
-This issue isn't caused by any empty folders.
+This issue isn't caused by any empty folders. I handled them in the code.
 This will most certainly fuck up your shit.
 If you're confident that it won't, you're more than welcome to continue.
 

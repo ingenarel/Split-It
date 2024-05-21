@@ -8,7 +8,7 @@ for folders in os.listdir(cachefolder_path):
         counter = 0
         while counter < 3:
             if counter == 2:
-                counter == 0
+                counter = 0
             print(os.listdir(f"{cachefolder_path}\\{folders}")[counter])
             counter += 1
     except IndexError:

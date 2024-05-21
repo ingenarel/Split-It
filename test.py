@@ -8,8 +8,10 @@ for folders in os.listdir(cachefolder_path):
     try:
         counter = 0
         while counter < 3:
-            print(os.listdir(f"{cachefolder_path}\\{folders}")[counter])
+            last_shit = counter
+            print(os.listdir(f"{cachefolder_path}\\{folders}")[last_shit])
             counter += 1
+
     except IndexError:
         pass
     # for files in os.listdir(f"{cachefolder_path}\\{folders}"):

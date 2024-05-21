@@ -8,8 +8,9 @@ for folders in os.listdir(cachefolder_path):
         last_shit = 0
         counter = 0
         while counter < 3:
-            if counter == 2:
+            if counter == 3:
                 counter = 0
+                break
             print(os.listdir(f"{cachefolder_path}\\{folders}")[last_shit])
             counter += 1
             last_shit += 1

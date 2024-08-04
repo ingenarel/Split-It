@@ -1,5 +1,4 @@
-from contextlib import chdir
-import os, re
+import os, re, time, shutil
 
 def data_maker_function(cache_directory_name:str):
     data = {}
@@ -73,16 +72,27 @@ def split_parser(bufferlist):
         last_frame = first_frame+len(buffer[0])
         folderdata = {}
         for folder in buffer:
-            # print(re.search(r"^.+/",folder[0]).group())
             folderdata[re.search(r"^.+/",folder[0]).group()] = folder
         data[f"{first_frame+1}-{last_frame}"] = folderdata
         first_frame = last_frame
     
-    print(data)
+    return data
+
+def move(parsed_bufferlist, cache_directory, destination_directory):
+    main_destination = time.asctime().replace(" ", "_").replace(":", "-")
+    sim_dir_name = re.search(r"^.+/(.+)", cache_directory).group(1)
+    for buffer in parsed_bufferlist:
+        for folderlist in parsed_bufferlist[buffer]:
+            foldername = re.search(r"^.+/(.+)", folderlist).group(1)
+            os.makedirs(f"{destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}")
+            for file in parsed_bufferlist[buffer][folderlist]:
+                filename = re.search(r"^.+/(.+)", file).group(1)
+                shutil.copyfile(file, f"{destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}{filename}")
 
 def main():
     cache_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"
-    split_parser(
+    destination_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/test"
+    splitted_data = split_parser(
         split_func(
             partition_data(
                 data_maker_function(
@@ -91,6 +101,9 @@ def main():
             )
         )
     )
+
+    move(splitted_data, cache_directory, destination_directory)
+
     # print(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim")))
     # test_split(split_func(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"))))
     # split_func(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim")))

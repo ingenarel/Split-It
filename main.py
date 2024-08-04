@@ -1,4 +1,5 @@
-import os
+from contextlib import chdir
+import os, re
 
 def data_maker_function(cache_directory_name:str):
     data = {}
@@ -60,10 +61,38 @@ def test_split(bufferlist):
                 size += os.path.getsize(file)
         print(size)
 
+def split_parser(bufferlist):
+    x = []
+    for buffer in bufferlist:
+        y = zip(*buffer)
+        x.append(sorted(y))
+    
+    data = {}
+    first_frame = 0
+    for buffer in x:
+        last_frame = first_frame+len(buffer[0])
+        folderdata = {}
+        for folder in buffer:
+            # print(re.search(r"^.+/",folder[0]).group())
+            folderdata[re.search(r"^.+/",folder[0]).group()] = folder
+        data[f"{first_frame+1}-{last_frame}"] = folderdata
+        first_frame = last_frame
+    
+    print(data)
+
 def main():
+    cache_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"
+    split_parser(
+        split_func(
+            partition_data(
+                data_maker_function(
+                    cache_directory
+                )
+            )
+        )
+    )
     # print(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim")))
-    # print(split_func(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"))))
-    test_split(split_func(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"))))
+    # test_split(split_func(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"))))
     # split_func(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim")))
 
 if __name__ == "__main__":

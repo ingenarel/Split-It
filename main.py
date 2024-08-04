@@ -104,10 +104,6 @@ def main():
 
     move(splitted_data, cache_directory, destination_directory)
 
-    # print(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim")))
-    # test_split(split_func(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"))))
-    # split_func(partition_data(data_maker_function("/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim")))
-
 if __name__ == "__main__":
     main()
     # 1 gb  = 1000000000 bytes

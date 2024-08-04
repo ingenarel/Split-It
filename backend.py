@@ -28,9 +28,8 @@ def partition_data(sim_dir_data):
         data.append(filelistwithsize)
     return data
 
-def split_func(partitioned_data):
+def split_func(partitioned_data, maxsize:int):
     x = []
-    maxsize = 2147483648
     buffer = []
     size = 0
     for filelistwithsize in partitioned_data:
@@ -88,17 +87,20 @@ def move(parsed_bufferlist, cache_directory, destination_directory):
             for file in parsed_bufferlist[buffer][folderlist]:
                 filename = re.search(r"^.+/(.+)", file).group(1)
                 shutil.copyfile(file, f"{destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}{filename}")
+                print("file copied!")
 
 def main():
     cache_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"
     destination_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/test"
+    cache_folder_size = 2147483648
     splitted_data = split_parser(
         split_func(
             partition_data(
                 data_maker_function(
                     cache_directory
                 )
-            )
+            ),
+            cache_folder_size
         )
     )
 
@@ -106,6 +108,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print("all files copied successfully!")
     # 1 gb  = 1000000000 bytes
     # 1 gib = 1073741824 bytes
 

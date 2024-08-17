@@ -81,8 +81,6 @@ ________________________________________________________________________________
 |:                                                                                                                                            :|
 |:   SUPPORT THE SHEEPIT DEVS!!!! -                                                 https://www.sheepit-renderfarm.com/donation               :|
 |:                                                                                                                                            :|
-|:   Follow me on Instagram -                                                       https://www.instagram.com/saad_abdullah999666/            :|
-|:   Reddit account -                                                               https://reddit.com/user/INGENAREL                         :|
 |:   Discord -                                                                      ingenarel#2846                                            :|
 |:   My youtube channel -                                                           https://www.youtube.com/channel/UC90Tar8Bpx3Q8UqpM8qxWZw  :|
 |:   Sponsor me on SheepIt -                                                        https://www.sheepit-renderfarm.com/user/ingenarel/profile :|

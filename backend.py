@@ -28,15 +28,19 @@ def partition_data(sim_dir_data):
         data.append(filelistwithsize)
     return data
 
+<<<<<<< HEAD
 def split_func(partitioned_data, maxsize:int):
+=======
+def split_func(partitioned_data, sim_dir_max_size_per_buffer):
+>>>>>>> backend
     x = []
     buffer = []
     size = 0
     for filelistwithsize in partitioned_data:
-        if size+filelistwithsize[-1] < maxsize:
+        if size+filelistwithsize[-1] < sim_dir_max_size_per_buffer:
             size += filelistwithsize[-1]
             buffer.append(filelistwithsize[:-1])
-        elif size+filelistwithsize[-1] > maxsize:
+        elif size+filelistwithsize[-1] > sim_dir_max_size_per_buffer:
             x.append(buffer)
             # print(buffer)
             buffer = []
@@ -77,38 +81,82 @@ def split_parser(bufferlist):
     
     return data
 
-def move(parsed_bufferlist, cache_directory, destination_directory):
+def move_and_zip(parsed_bufferlist, cache_directory, destination_directory, blend_file_path):
     main_destination = time.asctime().replace(" ", "_").replace(":", "-")
     sim_dir_name = re.search(r"^.+/(.+)", cache_directory).group(1)
+    blend_file_name = re.search(r"^.+/(.+)", blend_file_path).group(1)
     for buffer in parsed_bufferlist:
         for folderlist in parsed_bufferlist[buffer]:
             foldername = re.search(r"^.+/(.+)", folderlist).group(1)
             os.makedirs(f"{destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}")
             for file in parsed_bufferlist[buffer][folderlist]:
                 filename = re.search(r"^.+/(.+)", file).group(1)
+                print(f"copying {destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}{filename}...")
                 shutil.copyfile(file, f"{destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}{filename}")
+<<<<<<< HEAD
                 print("file copied!")
 
 def main():
     cache_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"
     destination_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/test"
     cache_folder_size = 2147483648
+=======
+                print("Succesful!")
+
+        print(f"copying {destination_directory}/{main_destination}/{buffer}/{blend_file_name}_{buffer}.blend...")
+        shutil.copyfile(blend_file_path, f"{destination_directory}/{main_destination}/{buffer}/{blend_file_name}_{buffer}.blend")
+        print("Succesful!")
+
+        print(f"creating {destination_directory}/{main_destination}/{blend_file_name}_{buffer}.zip")
+        shutil.make_archive(
+                f"{destination_directory}/{main_destination}/{blend_file_name}_{buffer}",
+                'zip',
+                f"{destination_directory}/{main_destination}/{buffer}",
+                )
+        print("Succesful!")
+
+def initialize(
+        cache_directory_path:str,
+        destination_directory_path:str,
+        blend_file_path:str,
+        other_files_and_dirs:list=None,
+        ):
+    maxsize = 2147483648
+    maxsize = maxsize - os.path.getsize(blend_file_path)
+>>>>>>> backend
     splitted_data = split_parser(
         split_func(
             partition_data(
                 data_maker_function(
-                    cache_directory
+                    cache_directory_path
                 )
             ),
+<<<<<<< HEAD
             cache_folder_size
+=======
+            maxsize
+>>>>>>> backend
         )
     )
+    move_and_zip(splitted_data, cache_directory_path, destination_directory_path, blend_file_path)
 
-    move(splitted_data, cache_directory, destination_directory)
-
+def main():
+    # cache_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"
+    cache_directory = "/home/ingenarel/Blender/archfluidcache"
+    destination_directory = "/home/ingenarel/Blender"
+    blend_file_path = "/home/ingenarel/Blender/arch linux fluid4.blend"
+    initialize(
+        cache_directory,
+        destination_directory,
+        blend_file_path
+    )
 if __name__ == "__main__":
     main()
+<<<<<<< HEAD
     print("all files copied successfully!")
+=======
+    print("done!")
+>>>>>>> backend
     # 1 gb  = 1000000000 bytes
     # 1 gib = 1073741824 bytes
 

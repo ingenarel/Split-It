@@ -1,31 +1,28 @@
 import os, re, time, shutil
 
 def data_maker_function(cache_directory_name:str):
-    data = {}
+    data = []
     for folder in os.listdir(cache_directory_name):
-        filenamelist = []
-        for file in os.listdir(f"{cache_directory_name}/{folder}"):
-            filenamelist.append(f"{cache_directory_name}/{folder}/{file}")
+        filenamelist = [
+            f"{cache_directory_name}/{folder}/{file}" for file in os.listdir(f"{cache_directory_name}/{folder}")
+        ]
         if filenamelist != []:
-            data[folder] = filenamelist
+            data.append(sorted(filenamelist))
+    # print(data)
     return data
 
 def partition_data(sim_dir_data):
-    x = []
-    for folder in sim_dir_data:
-        x.append(sim_dir_data[folder])
-    y = zip(*x)
-    
+    y = zip(*sim_dir_data)
     data = []
     for filelist in sorted(y):
         size = 0
         filelistwithsize = []
         for file in filelist:
-            # print(file)
             filelistwithsize.append(file)
             size += os.path.getsize(file)
         filelistwithsize.append(size)
         data.append(filelistwithsize)
+    # print(data)
     return data
 
 <<<<<<< HEAD
@@ -91,8 +88,9 @@ def move_and_zip(parsed_bufferlist, cache_directory, destination_directory, blen
             os.makedirs(f"{destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}")
             for file in parsed_bufferlist[buffer][folderlist]:
                 filename = re.search(r"^.+/(.+)", file).group(1)
-                print(f"copying {destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}{filename}...")
+                print(f"\rcopying {destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}{filename}..."+" "*25, end="")
                 shutil.copyfile(file, f"{destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}{filename}")
+<<<<<<< HEAD
 <<<<<<< HEAD
                 print("file copied!")
 
@@ -102,18 +100,20 @@ def main():
     cache_folder_size = 2147483648
 =======
                 print("Succesful!")
+=======
+>>>>>>> backend
 
-        print(f"copying {destination_directory}/{main_destination}/{buffer}/{blend_file_name}_{buffer}.blend...")
+        print(f"\rcopying {destination_directory}/{main_destination}/{buffer}/{blend_file_name}_{buffer}.blend..."+" "*25, end="")
         shutil.copyfile(blend_file_path, f"{destination_directory}/{main_destination}/{buffer}/{blend_file_name}_{buffer}.blend")
-        print("Succesful!")
 
-        print(f"creating {destination_directory}/{main_destination}/{blend_file_name}_{buffer}.zip")
+        print(f"\rcreating {destination_directory}/{main_destination}/{blend_file_name}_{buffer}.zip..."+" "*25, end="")
         shutil.make_archive(
                 f"{destination_directory}/{main_destination}/{blend_file_name}_{buffer}",
                 'zip',
                 f"{destination_directory}/{main_destination}/{buffer}",
                 )
-        print("Succesful!")
+        print(f"\rdeleting buffer {destination_directory}/{main_destination}/{buffer}..."+" "*25, end="")
+        shutil.rmtree(f"{destination_directory}/{main_destination}/{buffer}")
 
 def initialize(
         cache_directory_path:str,
@@ -142,9 +142,9 @@ def initialize(
 
 def main():
     # cache_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"
-    cache_directory = "/home/ingenarel/Blender/archfluidcache"
-    destination_directory = "/home/ingenarel/Blender"
-    blend_file_path = "/home/ingenarel/Blender/arch linux fluid4.blend"
+    cache_directory = "/home/ingenarel/Blender/archsmokecache"
+    destination_directory = "/home/ingenarel/Blender/destination"
+    blend_file_path = "/home/ingenarel/Blender/arch logo fire2.blend"
     initialize(
         cache_directory,
         destination_directory,
@@ -153,9 +153,13 @@ def main():
 if __name__ == "__main__":
     main()
 <<<<<<< HEAD
+<<<<<<< HEAD
     print("all files copied successfully!")
 =======
     print("done!")
+>>>>>>> backend
+=======
+    print(f"\rDone!"+" "*50, end="")
 >>>>>>> backend
     # 1 gb  = 1000000000 bytes
     # 1 gib = 1073741824 bytes

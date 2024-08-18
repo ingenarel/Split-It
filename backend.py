@@ -92,6 +92,7 @@ def move_and_zip(parsed_bufferlist, cache_directory, destination_directory, blen
                 shutil.copyfile(file, f"{destination_directory}/{main_destination}/{buffer}/{sim_dir_name}/{foldername}{filename}")
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 print("file copied!")
 
 def main():
@@ -100,6 +101,8 @@ def main():
     cache_folder_size = 2147483648
 =======
                 print("Succesful!")
+=======
+>>>>>>> backend
 =======
 >>>>>>> backend
 
@@ -154,9 +157,13 @@ if __name__ == "__main__":
     main()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     print("all files copied successfully!")
 =======
     print("done!")
+>>>>>>> backend
+=======
+    print(f"\rDone!"+" "*50, end="")
 >>>>>>> backend
 =======
     print(f"\rDone!"+" "*50, end="")

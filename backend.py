@@ -120,18 +120,18 @@ def initialize(
     move_and_zip(splitted_data, cache_directory_path, destination_directory_path, blend_file_path)
 
 def main():
-    # cache_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"
-    cache_directory = "/home/ingenarel/Blender/archsmokecache"
-    destination_directory = "/home/ingenarel/Blender/destination"
-    blend_file_path = "/home/ingenarel/Blender/arch logo fire2.blend"
-    initialize(
-        cache_directory,
-        destination_directory,
-        blend_file_path
-    )
+    # cache_directory = "/home/ingenarel/Blender/archsmokecache"
+    # destination_directory = "/home/ingenarel/Blender/destination"
+    # blend_file_path = "/home/ingenarel/Blender/arch logo fire2.blend"
+    # initialize(
+    #     cache_directory,
+    #     destination_directory,
+    #     blend_file_path
+    # )
+    ...
 if __name__ == "__main__":
     main()
-    print(f"\rDone!"+" "*50, end="")
+    # print(f"\rDone!"+" "*50, end="")
     # 1 gb  = 1000000000 bytes
     # 1 gib = 1073741824 bytes
 

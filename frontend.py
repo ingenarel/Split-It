@@ -2,8 +2,8 @@ import backend
 # import bpy
 
 def main():
-    cache_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"
-    destination_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/test"
+    # cache_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/LiquidSim"
+    # destination_directory = "/mnt/D/System files(D)/windows files/cachesplittertest/test"
     cache_folder_size = 2147483648
     splitted_data = backend.split_parser(
         backend.split_func(
